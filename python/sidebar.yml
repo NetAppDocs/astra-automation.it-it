@@ -1,0 +1,12 @@
+---
+section: python
+title: Utilizzo di Python
+entries:
+- title: SDK NetApp Astra Control Python
+  url: "/python/astra_toolkits.html"
+- title: Python nativo
+  entries:
+  - title: Prima di iniziare
+    url: "/python/python_before.html"
+  - title: Elencare le applicazioni
+    url: "/python/py_list_man_apps.html"

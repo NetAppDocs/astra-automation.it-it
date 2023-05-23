@@ -1,0 +1,47 @@
+---
+sidebar: sidebar 
+permalink: get-started/first_call.html 
+keywords: get started, first call, hello world 
+summary: 'È possibile eseguire un semplice comando curl sulla CLI della workstation per iniziare a utilizzare l"API REST di Astra Control e verificarne la disponibilità.' 
+---
+= La prima chiamata API
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+È possibile eseguire un semplice comando curl sulla CLI della workstation per iniziare a utilizzare l'API REST di Astra Control e verificarne la disponibilità.
+
+.Prima di iniziare
+L'utility Curl deve essere disponibile sulla workstation locale. È inoltre necessario disporre di un token API e dell'identificativo account associato. Vedere link:get_api_token.html["Ottieni un token API"] per ulteriori informazioni.
+
+.Esempio di arricciamento
+Il seguente comando Curl recupera un elenco di utenti Astra. Fornire il <ACCOUNT_ID> e il <API_TOKEN> appropriati, come indicato.
+
+[source, curl]
+----
+curl --location --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/core/v1/users' --header 'Content-Type: application/json' --header 'Authorization: Bearer <API_TOKEN>'
+----
+.Esempio di output JSON
+[listing]
+----
+{
+  "items": [
+    [
+    "David",
+    "Anderson",
+    "844ec6234-11e0-49ea-8434-a992a6270ec1"
+    ],
+    [
+      "Jane",
+      "Cohen",
+      "2a3e227c-fda7-4145-a86c-ed9aa0183a6c"
+    ]
+  ],
+  "metadata": {}
+}
+----

@@ -1,0 +1,82 @@
+---
+sidebar: sidebar 
+permalink: workflows/wf_list_man_apps.html 
+keywords:  
+summary: 'È possibile elencare le applicazioni attualmente gestite da Astra. È possibile eseguire questa operazione nell"ambito della ricerca di snapshot o backup per un"applicazione specifica.' 
+---
+= Elencare le applicazioni
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+È possibile elencare le applicazioni attualmente gestite da Astra. È possibile eseguire questa operazione nell'ambito della ricerca di snapshot o backup per un'applicazione specifica.
+
+
+
+=== 1. Elencare le applicazioni
+
+Eseguire la seguente chiamata API REST.
+
+[cols="25,75"]
+|===
+| Metodo HTTP | Percorso 
+
+
+| OTTIENI | /account/{account_id}/k8s/v2/apps 
+|===
+
+
+===== Parametri di input aggiuntivi
+
+Oltre ai parametri comuni a tutte le chiamate API REST, negli esempi di curl vengono utilizzati anche i seguenti parametri.
+
+[cols="25,10,10,55"]
+|===
+| Parametro | Tipo | Obbligatorio | Descrizione 
+
+
+| includi | Query | No | Se si desidera, selezionare i valori che si desidera restituire nella risposta. 
+|===
+
+
+===== Esempio di curl: Restituisce tutti i dati per tutte le applicazioni
+
+[source, curl]
+----
+curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v2/apps' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----
+
+
+===== Esempio di curl: Restituisce il nome, l'id e lo stato per tutte le applicazioni
+
+[source, curl]
+----
+curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v2/apps?include=name,id,state' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----
+
+
+===== Esempio di output JSON
+
+[source, json]
+----
+{
+    "items": [
+        [
+            "mysql",
+            "4ee2b8fa-3696-4f32-8879-399792f477c3",
+            "ready"
+        ],
+        [
+            "postgresql",
+            "3b984474-e5c9-4b64-97ee-cdeb9bcd212e",
+            "ready"
+        ],
+    ],
+    "metadata": {}
+}
+----

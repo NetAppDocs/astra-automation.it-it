@@ -1,0 +1,81 @@
+---
+sidebar: sidebar 
+permalink: workflows/wf_list_notifications.html 
+keywords:  
+summary: 'Puoi elencare le notifiche per un account Astra specifico. Questa operazione potrebbe essere eseguita durante il monitoraggio dell"attività del sistema o il debug di un problema.' 
+---
+= Elencare le notifiche
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Puoi elencare le notifiche per un account Astra specifico. Questa operazione potrebbe essere eseguita durante il monitoraggio dell'attività del sistema o il debug di un problema.
+
+
+
+=== 1. Elencare le notifiche
+
+Eseguire la seguente chiamata API REST.
+
+[cols="25,75"]
+|===
+| Metodo HTTP | Percorso 
+
+
+| OTTIENI | /accounts/{account_id}/core/v1/notifications 
+|===
+
+
+===== Parametri di input aggiuntivi
+
+Oltre ai parametri comuni a tutte le chiamate API REST, negli esempi di curl vengono utilizzati anche i seguenti parametri.
+
+[cols="25,10,10,55"]
+|===
+| Parametro | Tipo | Obbligatorio | Descrizione 
+
+
+| filtro | Query | No | Se si desidera, filtrare le notifiche che si desidera restituire nella risposta. 
+
+
+| includi | Query | No | Se si desidera, selezionare i valori che si desidera restituire nella risposta. 
+|===
+
+
+===== Esempio di curl: Restituisce tutte le notifiche
+
+[source, curl]
+----
+curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/core/v1/notifications' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----
+
+
+===== Esempio di curl: Restituisce la descrizione delle notifiche con severità di avviso
+
+[source, curl]
+----
+curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/core/v1/notifications?filter=severity%20eq%20'warning'&include=description' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----
+
+
+===== Esempio di output JSON
+
+[source, json]
+----
+{
+  "items": [
+    [
+      "Trident on cluster david-ie-00 has failed or timed out; installation of the Trident operator failed or is not yet complete; operator failed to reach an installed state within 300.00 seconds; container trident-operator not found in operator deployment"
+    ],
+    [
+      "Trident on cluster david-ie-00 has failed or timed out; installation of the Trident operator failed or is not yet complete; operator failed to reach an installed state within 300.00 seconds; container trident-operator not found in operator deployment"
+    ]
+  ],
+  "metadata": {}
+}
+----

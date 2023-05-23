@@ -1,0 +1,93 @@
+---
+sidebar: sidebar 
+permalink: workflows/wf_clone_app_snapshot.html 
+keywords:  
+summary: È possibile creare una nuova applicazione clonandola da uno snapshot. 
+---
+= Clonare un'applicazione da uno snapshot
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+È possibile creare una nuova applicazione clonandola da uno snapshot.
+
+
+
+=== Prima di iniziare
+
+Tenere presente quanto segue a proposito di questo flusso di lavoro:
+
+* Viene utilizzata un'istantanea dell'applicazione
+* L'operazione di cloni viene eseguita all'interno dello stesso cluster
+
+
+
+NOTE: Per clonare un'applicazione in un cluster diverso, è necessario aggiornare `clusterId` Nell'input JSON appropriato per il proprio ambiente.
+
+
+
+=== 1. Selezionare l'applicazione da clonare
+
+Eseguire il flusso di lavoro link:wf_list_man_apps.html["Elencare le applicazioni"] e selezionare l'applicazione che si desidera clonare. Per la chiamata DI PAUSA utilizzata per clonare l'applicazione sono necessari diversi valori delle risorse.
+
+
+
+=== 2. Selezionare l'istantanea da utilizzare
+
+Eseguire il flusso di lavoro link:wf_list_snapshots.html["Elencare le istantanee"] e selezionare lo snapshot da utilizzare.
+
+
+
+=== 3. Clonare l'applicazione
+
+Eseguire la seguente chiamata API REST.
+
+[cols="25,75"]
+|===
+| Metodo HTTP | Percorso 
+
+
+| POST | /accounts/{account_id}/k8s/v2/apps 
+|===
+
+
+===== Parametri di input aggiuntivi
+
+Oltre ai parametri comuni a tutte le chiamate API REST, negli esempi di curl vengono utilizzati anche i seguenti parametri.
+
+[cols="25,10,10,55"]
+|===
+| Parametro | Tipo | Obbligatorio | Descrizione 
+
+
+| JSON | Corpo | Sì | Fornisce i parametri per l'applicazione clonata. Vedere l'esempio riportato di seguito. 
+|===
+
+
+===== Esempio di input JSON
+
+[source, json]
+----
+{
+  "type": "application/astra-app",
+  "version": "2.0",
+  "name": "mysql-clone2",
+  "clusterID": "30880586-d579-4d27-930f-a9633e59173b",
+  "sourceClusterID": "30880586-d579-4d27-930f-a9633e59173b",
+  "namespace": "mysql",
+  "snapshotID": "e24515bd-a28e-4b28-b832-f3c74dbf32fb"
+}
+----
+
+
+===== Esempio di curl: Clonare un'applicazione da uno snapshot
+
+[source, curl]
+----
+curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v2/apps' --header 'Content-Type: application/astra-app+json' --header '*/*' --header 'Authorization: Bearer <API_TOKEN>' --data @JSONinput
+----

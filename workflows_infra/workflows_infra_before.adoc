@@ -1,0 +1,55 @@
+---
+sidebar: sidebar 
+permalink: workflows_infra/workflows_infra_before.html 
+keywords: workflows, infrastructure workflows, preparation 
+summary: 'È possibile utilizzare questi flussi di lavoro per creare e gestire l"infrastruttura utilizzata con un"implementazione di Astra Control Center. In molti casi, i flussi di lavoro possono essere utilizzati anche con Astra Control Service.' 
+---
+= Prima di iniziare
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+È possibile utilizzare questi flussi di lavoro per creare e gestire l'infrastruttura utilizzata con un'implementazione di Astra Control Center. In molti casi, i flussi di lavoro possono essere utilizzati anche con Astra Control Service.
+
+
+NOTE: Questi flussi di lavoro possono essere ampliati e migliorati da NetApp in qualsiasi momento, pertanto è necessario esaminarli periodicamente.
+
+
+
+== Preparazione generale
+
+Prima di utilizzare uno qualsiasi dei flussi di lavoro Astra, assicurarsi di rivedere link:../get-started/prepare_to_use_workflows.html["Preparati a utilizzare i flussi di lavoro"].
+
+
+
+== Categorie di workflow
+
+I flussi di lavoro dell'infrastruttura sono organizzati in diverse categorie per facilitare l'individuazione di quello desiderato.
+
+[cols="25,75"]
+|===
+| Categoria | Descrizione 
+
+
+| Identità e accesso | Questi flussi di lavoro consentono di gestire l'identità e l'accesso ad Astra. Le risorse includono utenti, credenziali e token. 
+
+
+| Configurazione LDAP | È possibile configurare Astra Control Center in modo che utilizzi LDAP per autenticare gli utenti selezionati. 
+
+
+| Cluster | È possibile aggiungere cluster Kubernetes gestiti che consentono di proteggere e supportare le applicazioni in essi contenute. 
+
+
+| Cloud | Questi flussi di lavoro forniscono l'accesso ai cloud disponibili attraverso l'API REST di Astra Control. 
+
+
+| Bucket | È possibile utilizzare questi flussi di lavoro per creare e gestire i bucket S3 utilizzati per memorizzare i backup. 
+
+
+| Storage | Questi flussi di lavoro consentono di aggiungere e gestire volumi e backend di storage. 
+|===

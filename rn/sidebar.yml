@@ -1,0 +1,10 @@
+---
+section: rn
+title: Note di rilascio
+entries:
+- title: A proposito di questa release
+  url: "/rn/about.html"
+- title: Novità
+  url: "/rn/whats_new.html"
+- title: Problemi noti
+  url: "/rn/known_issues.html"

@@ -1,0 +1,83 @@
+---
+sidebar: sidebar 
+permalink: workflows/workflows_before.html 
+keywords: workflows, management workflows, preparation 
+summary: 'È possibile utilizzare questi flussi di lavoro come parte dell"amministrazione delle applicazioni in un cluster gestito da Astra.' 
+---
+= Prima di iniziare
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+È possibile utilizzare questi flussi di lavoro come parte dell'amministrazione delle applicazioni in un cluster gestito da Astra.
+
+
+NOTE: Questi flussi di lavoro possono essere ampliati e migliorati da NetApp in qualsiasi momento, pertanto è necessario esaminarli periodicamente.
+
+
+
+== Preparazione generale
+
+Prima di utilizzare uno qualsiasi dei flussi di lavoro Astra, assicurarsi di rivedere link:../get-started/prepare_to_use_workflows.html["Preparati a utilizzare i flussi di lavoro"].
+
+
+
+== Categorie di workflow
+
+I flussi di lavoro di gestione sono organizzati in diverse categorie per facilitare l'individuazione di quello desiderato.
+
+[cols="25,75"]
+|===
+| Categoria | Descrizione 
+
+
+| Controllo delle applicazioni | Questi flussi di lavoro consentono di controllare le applicazioni gestite e non gestite. È possibile elencare le applicazioni, nonché creare e rimuovere un'applicazione gestita. 
+
+
+| Protezione dell'applicazione | È possibile utilizzare questi flussi di lavoro per proteggere le applicazioni gestite attraverso snapshot e backup. 
+
+
+| Clonare e ripristinare le applicazioni | Questo flusso di lavoro descrive come clonare e ripristinare le applicazioni gestite. 
+
+
+| Supporto | Sono disponibili diversi flussi di lavoro per il debug e il supporto delle applicazioni, oltre all'ambiente Kubernetes generale. 
+|===
+
+
+== Considerazioni aggiuntive
+
+Quando si utilizzano i flussi di lavoro di gestione, è necessario considerare alcune considerazioni aggiuntive.
+
+
+
+=== Clonare un'applicazione
+
+Quando si clonano un'applicazione, è necessario prendere in considerazione alcuni aspetti. I parametri descritti di seguito fanno parte dell'input JSON.
+
+Identificatore del cluster di origine:: Il valore di `sourceClusterID` identifica sempre il cluster in cui è installata l'applicazione originale.
+Identificatore del cluster:: Il valore di `clusterID` identifica il cluster in cui verrà installata la nuova applicazione.
++
+--
+* Durante la clonazione all'interno dello stesso cluster, `clusterID` e. `sourceClusterID` hanno lo stesso valore.
+* Quando si esegue la clonazione tra cluster, i due valori sono diversi e. `clusterID` Deve essere l'ID del cluster di destinazione.
+
+
+--
+Spazi dei nomi:: Il `namespace` il valore deve essere diverso dall'applicazione di origine. Inoltre, lo spazio dei nomi per il clone non può esistere e Astra lo crea.
+Backup e snapshot:: È possibile clonare un'applicazione da un backup o da uno snapshot esistente utilizzando `backupID` oppure `snapshotID` parametri. Se non si fornisce un backup o uno snapshot, Astra crea prima un backup dell'applicazione e poi clonerà dal backup.
+
+
+
+
+==== Ripristino di un'applicazione
+
+Di seguito sono riportati alcuni aspetti da considerare durante il ripristino di un'applicazione.
+
+* Il ripristino di un'applicazione è molto simile all'operazione di clonazione.
+* Durante il ripristino di un'applicazione, è necessario fornire un backup o uno snapshot.
+

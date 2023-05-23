@@ -1,0 +1,47 @@
+---
+sidebar: sidebar 
+permalink: rest-core/url_format.html 
+keywords: url, url format, endpoint, version 
+summary: 'La struttura generale dell"URL utilizzato per accedere a un"istanza o a una raccolta di risorse attraverso l"API REST è composta da diversi valori. Questa struttura riflette il modello a oggetti sottostante e la progettazione del sistema.' 
+---
+= Formato URL
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+La struttura generale dell'URL utilizzato per accedere a un'istanza o a una raccolta di risorse attraverso l'API REST è composta da diversi valori. Questa struttura riflette il modello a oggetti sottostante e la progettazione del sistema.
+
+.Account come root
+La radice del percorso delle risorse per ogni endpoint REST è l'account Astra. Quindi, tutti i percorsi nell'URL iniziano con `/account/{account_id}` dove `account_id` È il valore UUIDv4 univoco per l'account. Struttura interna questa riflette una progettazione in cui l'accesso a tutte le risorse si basa su un account specifico.
+
+.Categoria di risorse degli endpoint
+Gli endpoint delle risorse Astra sono suddivisi in tre categorie:
+
+* Core (`/core`)
+* Applicazione gestita (`/k8s`)
+* Topologia (`/topology`)
+
+
+Vedere link:../endpoints/resources.html["Risorse"] per ulteriori informazioni.
+
+.Versione categoria
+Ciascuna delle tre categorie di risorse dispone di una versione globale che controlla la versione delle risorse a cui si accede. Per convenzione e definizione, passaggio a una nuova versione principale di una categoria di risorse (ad esempio, da `/v1` a. `/v2`) Introdurrà le ultime modifiche nell'API.
+
+.Istanza o raccolta di risorse
+È possibile utilizzare una combinazione di tipi di risorse e identificatori nel percorso, in base all'accesso a un'istanza o a una raccolta di risorse.
+
+.Esempio
+* Percorso delle risorse
++
+In base alla struttura presentata in precedenza, un percorso tipico verso un endpoint è: `/accounts/{account_id}/core/v1/users`.
+
+* URL completo
++
+L'URL completo per l'endpoint corrispondente è: `\https://astra.netapp.io/accounts/{account_id}/core/v1/users`.
+
+

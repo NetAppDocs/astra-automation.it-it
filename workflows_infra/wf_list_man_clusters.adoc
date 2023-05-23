@@ -1,0 +1,39 @@
+---
+sidebar: sidebar 
+permalink: workflows_infra/wf_list_man_clusters.html 
+keywords:  
+summary: Puoi elencare i cluster Kubernetes attualmente gestiti da Astra. 
+---
+= Elencare i cluster gestiti
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Puoi elencare i cluster Kubernetes attualmente gestiti da Astra.
+
+
+
+=== 1. Elencare i cluster gestiti
+
+Eseguire la seguente chiamata API REST.
+
+[cols="1,6"]
+|===
+| Metodo HTTP | Percorso 
+
+
+| OTTIENI | /Accounts/{account_id}/topology/v1/managedClusters 
+|===
+
+
+===== Esempio di curl: Restituisce tutti i dati per tutti i cluster
+
+[source, curl]
+----
+curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/topology/v1/managedClusters' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----

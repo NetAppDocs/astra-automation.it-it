@@ -1,0 +1,98 @@
+---
+sidebar: sidebar 
+permalink: workflows/wf_list_snapshots.html 
+keywords:  
+summary: 'È possibile elencare le istantanee acquisite per un"applicazione specifica.' 
+---
+= Elencare le istantanee
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+È possibile elencare le istantanee acquisite per un'applicazione specifica.
+
+
+
+=== Prima di iniziare
+
+È necessario disporre dell'ID dell'applicazione per la quale si desidera elencare le snapshot. Se necessario, è possibile utilizzare il flusso di lavoro link:wf_list_man_apps.html["Elencare le applicazioni"] per individuare l'applicazione.
+
+
+
+=== 1. Elencare le istantanee
+
+Eseguire la seguente chiamata API REST per elencare le snapshot.
+
+[cols="25,75"]
+|===
+| Metodo HTTP | Percorso 
+
+
+| OTTIENI | /Accounts/{account_id}/k8s/v1/apps/{app_id}/appSnap 
+|===
+
+
+===== Parametri di input aggiuntivi
+
+Oltre ai parametri comuni a tutte le chiamate API REST, negli esempi di curl vengono utilizzati anche i seguenti parametri.
+
+[cols="15,10,10,65"]
+|===
+| Parametro | Tipo | Obbligatorio | Descrizione 
+
+
+| id app | Percorso | Sì | Identifica l'applicazione proprietaria delle istantanee elencate. 
+
+
+| conta | Query | No | Se `count=true` il numero di snapshot è incluso nella sezione dei metadati della risposta. 
+|===
+
+
+===== Esempio di curl: Restituire tutte le snapshot per l'applicazione
+
+[source, curl]
+----
+curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/apps/<APP_ID>/appSnaps' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----
+
+
+===== Esempio di curl: Restituisce tutte le snapshot per l'applicazione e il numero
+
+[source, curl]
+----
+curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/apps/<APP_ID>/appSnaps?count=true' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----
+
+
+===== Esempio di output JSON
+
+[source, json]
+----
+{
+    "items": [
+        {
+            "type": "application/astra-appSnap",
+            "version": "1.1",
+            "id": "1ce34da4-bb0a-4926-b925-4a5d85dda8c2",
+            "hookState": "success",
+            "metadata": {
+                "createdBy": "a530e865-23e8-4e2e-8020-e92c419a3867",
+                "creationTimestamp": "2022-10-30T22:44:20Z",
+                "modificationTimestamp": "2022-10-30T22:44:20Z",
+                "labels": []
+            },
+            "snapshotAppAsset": "0ebfe3f8-40ed-4bdc-88c4-2144fbda85a0",
+            "snapshotCreationTimestamp": "2022-10-30T22:44:33Z",
+            "name": "snapshot-david-1",
+            "state": "completed",
+            "stateUnready": []
+        }
+    ],
+    "metadata": {}
+}
+----

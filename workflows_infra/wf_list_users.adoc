@@ -1,0 +1,82 @@
+---
+sidebar: sidebar 
+permalink: workflows_infra/wf_list_users.html 
+keywords:  
+summary: È possibile elencare gli utenti definiti per un account Astra specifico. 
+---
+= Elencare gli utenti
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+È possibile elencare gli utenti definiti per un account Astra specifico.
+
+
+
+=== 1. Elencare gli utenti
+
+Eseguire la seguente chiamata API REST.
+
+[cols="25,75"]
+|===
+| Metodo HTTP | Percorso 
+
+
+| OTTIENI | /accounts/{account_id}/core/v1/users 
+|===
+
+
+===== Parametri di input aggiuntivi
+
+Oltre ai parametri comuni a tutte le chiamate API REST, negli esempi di curl vengono utilizzati anche i seguenti parametri.
+
+[cols="25,10,10,55"]
+|===
+| Parametro | Tipo | Obbligatorio | Descrizione 
+
+
+| includi | Query | No | Se si desidera, selezionare i valori che si desidera restituire nella risposta. 
+|===
+
+
+===== Esempio di curl: Restituisce tutti i dati per tutti gli utenti
+
+[source, curl]
+----
+curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/core/v1/users' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----
+
+
+===== Esempio di curl: Restituisce il nome, il cognome e l'id per tutti gli utenti
+
+[source, curl]
+----
+curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/core/v1/users?include=firstName,lastName,id' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----
+
+
+===== Esempio di output JSON
+
+[source, curl]
+----
+{
+  "items": [
+    [
+    "David",
+    "Anderson",
+    "844ec6234-11e0-49ea-8434-a992a6270ec1"
+    ],
+    [
+      "Jane",
+      "Cohen",
+      "2a3e227c-fda7-4145-a86c-ed9aa0183a6c"
+    ]
+  ],
+  "metadata": {}
+}
+----

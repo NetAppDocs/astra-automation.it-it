@@ -1,0 +1,39 @@
+---
+sidebar: sidebar 
+permalink: workflows_infra/wf_list_buckets.html 
+keywords:  
+summary: È possibile elencare i bucket S3 definiti per un account Astra specifico. 
+---
+= Elencare i bucket
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+È possibile elencare i bucket S3 definiti per un account Astra specifico.
+
+
+
+=== 1. Elencare i bucket
+
+Eseguire la seguente chiamata API REST per elencare i bucket.
+
+[cols="25,75"]
+|===
+| Metodo HTTP | Percorso 
+
+
+| OTTIENI | /accounts/{account_id}/topology/v1/bucket 
+|===
+
+
+===== Esempio di curl: Restituisce tutti i dati per tutti i bucket
+
+[source, curl]
+----
+curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/topology/v1/buckets' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----

@@ -1,0 +1,12 @@
+---
+section: rest-core
+title: Implementazione core REST
+entries:
+- title: Servizi web REST
+  url: "/rest-core/rest_web_services.html"
+- title: Risorse e raccolte
+  url: "/rest-core/resources_collections.html"
+- title: Dettagli HTTP
+  url: "/rest-core/http_details.html"
+- title: Formato URL
+  url: "/rest-core/url_format.html"

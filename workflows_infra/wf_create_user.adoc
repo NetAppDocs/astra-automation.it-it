@@ -1,0 +1,181 @@
+---
+sidebar: sidebar 
+permalink: workflows_infra/wf_create_user.html 
+keywords:  
+summary: 'È possibile creare un utente con credenziali specifiche e un ruolo predefinito. È anche possibile limitare l"accesso dell"utente a spazi dei nomi specifici.' 
+---
+= Creare un utente
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+È possibile creare un utente con credenziali specifiche e un ruolo predefinito. È anche possibile limitare l'accesso dell'utente a spazi dei nomi specifici.
+
+
+
+=== 1. Selezionare un nome utente
+
+Eseguire il flusso di lavoro link:../workflows_infra/wf_list_users.html["Elencare gli utenti"] e selezionare un nome disponibile non attualmente in uso.
+
+
+
+=== 2. Creare l'utente
+
+Eseguire la seguente chiamata API REST per creare un utente. Una volta completata la chiamata, il nuovo utente non sarà ancora utilizzabile.
+
+[cols="25,75"]
+|===
+| Metodo HTTP | Percorso 
+
+
+| POST | /accounts/{account_id}/core/v1/users 
+|===
+
+
+===== Esempio di input JSON
+
+[source, curl]
+----
+{
+  "type" :  "application/astra-user",
+  "version" : "1.1",
+  "firstName" : "John",
+  "lastName" : "West",
+  "email" : "jwest@example.com"
+}
+----
+
+
+===== Esempio di arricciamento
+
+[source, curl]
+----
+curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/core/v1/users' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>' --data @JSONinput
+----
+
+
+===== Esempio di output JSON
+
+[source, curl]
+----
+{
+    "metadata": {
+        "creationTimestamp": "2022-11-20T17:23:15Z",
+        "modificationTimestamp": "2022-11-20T17:23:15Z",
+        "createdBy": "a20e91f3-2c49-443b-b240-615d940ec5f3",
+        "labels": []
+    },
+    "type": "application/astra-user",
+    "version": "1.2",
+    "id": "d07dac0a-a328-4840-a216-12de16bbd484",
+    "authProvider": "local",
+    "authID": "jwest@example.com",
+    "firstName": "John",
+    "lastName": "West",
+    "companyName": "",
+    "email": "jwest@example.com",
+    "postalAddress": {
+        "addressCountry": "",
+        "addressLocality": "",
+        "addressRegion": "",
+        "streetAddress1": "",
+        "streetAddress2": "",
+        "postalCode": ""
+    },
+    "state": "active",
+    "sendWelcomeEmail": "false",
+    "isEnabled": "true",
+    "isInviteAccepted": "true",
+    "enableTimestamp": "2022-11-20T17:23:15Z",
+    "lastActTimestamp": ""
+}
+----
+
+
+=== 3. Se si desidera, selezionare gli spazi dei nomi consentiti
+
+Eseguire il flusso di lavoro link:../workflows/wf_list_namespaces.html["Elencare gli spazi dei nomi"] e selezionare gli spazi dei nomi a cui si desidera limitare l'accesso.
+
+
+
+=== 4. Associare l'utente a un ruolo
+
+Eseguire la seguente chiamata API REST per associare l'utente a un ruolo. Nell'esempio riportato di seguito non sono previste restrizioni per l'accesso allo spazio dei nomi. Vedere link:../additional/rbac.html#enhanced-rbac-with-namespace-granularity["RBAC migliorato con granularità dello spazio dei nomi"] per ulteriori informazioni.
+
+[cols="25,75"]
+|===
+| Metodo HTTP | Percorso 
+
+
+| POST | /Accounts/{account_id}/core/v1/roleBindings 
+|===
+
+
+===== Esempio di input JSON
+
+[source, curl]
+----
+{
+  "type" :  "application/astra-roleBinding",
+  "version" : "1.1",
+  "userID" : "d07dac0a-a328-4840-a216-12de16bbd484",
+  "accountID" : "29e1f39f-2bf4-44ba-a191-5b84ef414c95",
+  "role" : "viewer",
+  "roleConstraints": [ "*" ]
+}
+----
+
+
+===== Esempio di arricciamento
+
+[source, curl]
+----
+curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/core/v1/roleBindings' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>' --data @JSONinput
+----
+
+
+=== 5. Creare una credenziale
+
+Eseguire la seguente chiamata API REST per creare una credenziale e associarla all'utente. In questo esempio viene utilizzata una password fornita come valore base64. Il `name` La proprietà deve contenere l'ID dell'utente restituito al passaggio precedente. La proprietà di input `change` deve anche essere codificato in base64 e determina se l'utente deve modificare la propria password al primo accesso (`true` oppure `false`).
+
+
+NOTE: Questo passaggio è necessario solo con le implementazioni di Astra Control Center che utilizzano l'autenticazione locale. Non è necessario con le implementazioni di Astra Control Center utilizzando LDAP o con le implementazioni di Astra Control Service.
+
+[cols="25,75"]
+|===
+| Metodo HTTP | Percorso 
+
+
+| POST | /accounts/{account_id}/core/v1/credentials 
+|===
+
+
+===== Esempio di input JSON
+
+[source, curl]
+----
+{
+  "type" :  "application/astra-credential",
+  "version" : "1.1",
+  "name" : "d07dac0a-a328-4840-a216-12de16bbd484",
+  "keyType" : "passwordHash",
+  "keyStore" : {
+      "cleartext" : "TmV0QXBwMTIz",
+      "change" : "ZmFsc2U="
+  },
+  "valid" : "true"
+}
+----
+
+
+===== Esempio di arricciamento
+
+[source, curl]
+----
+curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/core/v1/credentials' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>' --data @JSONinput
+----

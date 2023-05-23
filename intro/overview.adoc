@@ -1,0 +1,47 @@
+---
+sidebar: sidebar 
+permalink: intro/overview.html 
+keywords: overview, introduction, features, benefits, deployment models, object model, query parameters, automation, family 
+summary: 'Astra Control Center e Astra Control Service forniscono un"API REST comune a cui è possibile accedere direttamente attraverso un linguaggio di programmazione o un"utility come Curl. Ci sono diversi punti di forza e vantaggi principali dell"API.' 
+---
+= Panoramica delle caratteristiche e dei vantaggi
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Astra Control Center e Astra Control Service forniscono un'API REST comune a cui è possibile accedere direttamente attraverso un linguaggio di programmazione o un'utility come Curl. Di seguito vengono presentati i principali punti di forza e i vantaggi dell'API.
+
+
+NOTE: Per accedere all'API REST, devi prima accedere all'interfaccia utente web Astra e generare un token API. È necessario includere il token in ogni richiesta API.
+
+.Basato sulla tecnologia REST
+L'API Astra Control è stata creata utilizzando la tecnologia REST e le Best practice attuali. La tecnologia di base include HTTP, JSON e RBAC.
+
+.Supporto per i due modelli di implementazione di Astra Control
+Astra Control Service viene utilizzato nell'ambiente di cloud pubblico, mentre Astra Control Center è per le implementazioni on-premise. Esiste un'API REST che supporta entrambi questi modelli di implementazione.
+
+.Mappatura chiara tra le risorse degli endpoint REST e il modello a oggetti
+Gli endpoint REST esterni utilizzati per accedere alle risorse vengono mappati su un modello a oggetti coerente gestito internamente dal servizio Astra. Il modello a oggetti è progettato utilizzando la modellazione delle relazioni con le entità (ER) che aiuta a definire chiaramente le azioni e le risposte API.
+
+.Set completo di parametri di query
+L'API REST fornisce un insieme completo di parametri di query che è possibile utilizzare per accedere alle raccolte di risorse. Alcune delle operazioni supportate includono il filtraggio, l'ordinamento e l'impaginazione.
+
+.Allineamento con l'interfaccia utente Web di Astra Control
+Il design dell'interfaccia utente web Astra è allineato con L'API REST e quindi c'è coerenza tra i due percorsi di accesso e l'esperienza dell'utente.
+
+.Solidi dati di debug e determinazione dei problemi
+L'API REST di Astra Control offre un'efficace funzionalità di debug e determinazione dei problemi, inclusi eventi di sistema e notifiche degli utenti.
+
+.Processi di workflow
+Viene fornita una serie di flussi di lavoro per agevolare lo sviluppo del codice di automazione. I flussi di lavoro sono organizzati in due categorie principali: Infrastruttura e gestione.
+
+.Base per tecnologie di automazione avanzate
+Oltre ad accedere direttamente all'API REST, è possibile utilizzare altre tecnologie di automazione basate sull'API REST.
+
+.Parte della documentazione della famiglia Astra
+La documentazione di Astra Control Automation fa parte della più ampia documentazione della famiglia Astra. Vedere https://docs.netapp.com/us-en/astra-family/["Documentazione Astra"^] per ulteriori informazioni.

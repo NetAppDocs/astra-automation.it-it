@@ -1,0 +1,32 @@
+---
+sidebar: sidebar 
+permalink: additional/work_with_collections.html 
+keywords: collections, filtering, pagination, count 
+summary: 'L"API REST di Astra Control offre diversi modi per accedere alle raccolte di risorse attraverso i parametri di query definiti.' 
+---
+= Lavorare con le raccolte
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+L'API REST di Astra Control offre diversi modi per accedere alle raccolte di risorse attraverso i parametri di query definiti.
+
+.Selezione dei valori
+È possibile specificare quali coppie chiave-valore devono essere restituite per ogni istanza di risorsa utilizzando `include` parametro. Tutte le istanze vengono restituite nel corpo della risposta.
+
+.Filtraggio
+Il filtraggio delle risorse di raccolta consente a un utente API di specificare le condizioni che determinano se una risorsa viene restituita nel corpo della risposta. Il `filter` il parametro viene utilizzato per indicare la condizione di filtraggio.
+
+.Ordinamento
+L'ordinamento delle risorse di raccolta consente a un utente API di specificare l'ordine in cui le risorse vengono restituite nel corpo della risposta. Il `orderBy` il parametro viene utilizzato per indicare la condizione di filtraggio.
+
+.Impaginazione
+È possibile applicare l'impaginazione limitando il numero di istanze di risorse restituite su una richiesta utilizzando `limit` parametro.
+
+.Conta
+Se si include il parametro booleano `count` impostare su `true`, il numero di risorse nella matrice restituita per una data risposta è fornito nella sezione dei metadati.

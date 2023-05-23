@@ -1,0 +1,191 @@
+---
+sidebar: sidebar 
+permalink: endpoints/resources.html 
+keywords: resources, endpoints, core, managed application, topology, openapi, openmetrics 
+summary: 'È possibile accedere alle risorse fornite tramite l"API REST di Astra Control per automatizzare un"implementazione Astra. Ogni risorsa è disponibile attraverso uno o più endpoint. In questa pagina viene fornita un"introduzione alle risorse REST che è possibile utilizzare come parte di un"implementazione dell"automazione.' 
+---
+= Risorse ed endpoint
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+È possibile accedere alle risorse fornite tramite l'API REST di Astra Control per automatizzare un'implementazione Astra. Ogni risorsa è disponibile attraverso uno o più endpoint. Di seguito viene fornita un'introduzione alle risorse REST che è possibile utilizzare come parte di un'implementazione dell'automazione.
+
+
+NOTE: Il formato del percorso e dell'URL completo utilizzati per accedere alle risorse di Astra Control si basa su diversi valori. Vedere link:../rest-core/url_format.html["Formato URL"] per ulteriori informazioni. Vedere anche link:../get-started/online_api_ref.html["Riferimento API online"] Per ulteriori informazioni sull'utilizzo delle risorse e degli endpoint Astra.
+
+
+
+== Riepilogo delle risorse REST di Astra Control
+
+Gli endpoint delle risorse principali forniti nell'API REST di Astra Control sono organizzati in tre categorie. È possibile accedere a ciascuna risorsa con il set completo di operazioni CRUD (creazione, lettura, aggiornamento, eliminazione), salvo dove indicato.
+
+La colonna *Release* indica la release Astra quando la risorsa è stata introdotta per la prima volta. Questo campo è in grassetto per le risorse aggiunte di recente all'API REST.
+
+
+
+=== Risorse di base
+
+Gli endpoint principali delle risorse forniscono i servizi di base necessari per stabilire e mantenere l'ambiente di runtime Astra.
+
+[cols="20,10,70"]
+|===
+| Risorsa | Rilasciare | Descrizione 
+
+
+| Account | 21.12 | Le risorse dell'account consentono di gestire i tenant isolati all'interno dell'ambiente di implementazione di Astra Control multi-tenant. 
+
+
+| ASUP | 21.08 | Le risorse ASUP rappresentano i bundle AutoSupport inoltrati al supporto NetApp. 
+
+
+| Certificato | 22.08 | Le risorse dei certificati rappresentano i certificati installati utilizzati per l'autenticazione avanzata delle connessioni in uscita. 
+
+
+| Credenziale | 21.04 | Le risorse delle credenziali contengono informazioni relative alla sicurezza che possono essere utilizzate con utenti Astra, cluster, bucket e backend di storage. 
+
+
+| Diritto | 21.08 | Le risorse relative ai diritti rappresentano le funzionalità e le capacità disponibili per un account in base alle licenze e alle sottoscrizioni attive. 
+
+
+| Evento | 21.04 | Le risorse degli eventi rappresentano tutti gli eventi che si verificano nel sistema, incluso il sottoinsieme classificato come notifiche. 
+
+
+| Gancio di esecuzione | 21.12 | Le risorse di esecuzione hook rappresentano script personalizzati che è possibile eseguire prima o dopo l'esecuzione di uno snapshot di un'applicazione gestita. 
+
+
+| Funzione | 21.08 | Le risorse delle funzioni rappresentano le funzioni Astra selezionate che è possibile interrogare per determinare se sono attivate o disattivate nel sistema. L'accesso è limitato alla sola lettura. 
+
+
+| Gruppo | 22.08 | Le risorse del gruppo rappresentano i gruppi Astra e le risorse associate. Nella release corrente sono supportati solo i gruppi LDAP. 
+
+
+| Origine gancio | 21.12 | Le risorse di origine hook rappresentano il codice di origine effettivo utilizzato con un gancio di esecuzione. La separazione del codice sorgente dal controllo di esecuzione offre diversi vantaggi, ad esempio la possibilità di condividere gli script. 
+
+
+| Gruppo LDAP | *22.11* | È possibile elencare i gruppi all'interno del server LDAP configurato. L'accesso ai gruppi LDAP è di sola lettura. 
+
+
+| Utente LDAP | *22.11* | È possibile elencare gli utenti all'interno del server LDAP configurato. L'accesso agli utenti LDAP è di sola lettura. 
+
+
+| Licenza | 21.08 | Le risorse di licenza rappresentano le licenze disponibili per un account Astra. 
+
+
+| Notifica | 21.04 | Le risorse di notifica rappresentano gli eventi Astra che hanno una destinazione di notifica. L'accesso viene fornito in base all'utente. 
+
+
+| Pacchetto | 22.04 | Le risorse del pacchetto forniscono la registrazione e l'accesso alle definizioni dei pacchetti. I pacchetti software sono composti da vari componenti, tra cui file, immagini e altri elementi. 
+
+
+| Binding dei ruoli | 21.04 | Le risorse di associazione dei ruoli rappresentano le relazioni tra coppie specifiche di utenti e account. Oltre al collegamento tra i due, viene specificato un set di autorizzazioni per ciascuno attraverso un ruolo specifico. 
+
+
+| Impostazione | 21.08 | Le risorse di impostazione rappresentano un insieme di coppie chiave-valore che descrivono una funzionalità per un account Astra specifico. 
+
+
+| Iscrizione | 21.08 | Le risorse di abbonamento rappresentano gli abbonamenti attivi per un account Astra. 
+
+
+| Attività | *22.11* | Le risorse delle attività forniscono l'accesso in sola lettura alle attività gestite e possono essere utilizzate per visualizzare lo stato delle attività interne a esecuzione prolungata. 
+
+
+| Token | 21.04 | Le risorse token rappresentano i token disponibili per accedere a livello di programmazione all'API REST di Astra Control. 
+
+
+| Notifica non letta | 21.04 | Le risorse di notifica non lette rappresentano le notifiche assegnate a un utente specifico ma non ancora lette. 
+
+
+| Eseguire l'upgrade | 22.04 | Le risorse di aggiornamento forniscono l'accesso ai componenti software e la possibilità di avviare gli aggiornamenti. 
+
+
+| Utente | 21.04 | Le risorse utente rappresentano gli utenti Astra in grado di accedere al sistema in base al proprio ruolo definito. 
+|===
+
+
+=== Risorse applicative gestite
+
+Gli endpoint delle risorse applicative gestite forniscono l'accesso alle applicazioni Kubernetes gestite.
+
+[cols="20,10,70"]
+|===
+| Risorsa | Rilasciare | Descrizione 
+
+
+| Risorsa applicativa | 21.04 | Le risorse applicative rappresentano raccolte interne di informazioni di stato necessarie per gestire le applicazioni Astra. 
+
+
+| Backup dell'applicazione | 21.04 | Le risorse di backup delle applicazioni rappresentano i backup delle applicazioni gestite. 
+
+
+| Snapshot dell'applicazione | 21.04 | Le risorse di snapshot delle applicazioni rappresentano snapshot delle applicazioni gestite. 
+
+
+| Override del gancio di esecuzione | 21.12 | Le risorse di override degli uncini di esecuzione consentono di disattivare gli uncini di esecuzione predefiniti NetApp precaricati per applicazioni specifiche in base alle necessità. 
+
+
+| Pianificazione | 21.04 | Le risorse di pianificazione rappresentano le operazioni di protezione dei dati pianificate per le applicazioni gestite come parte di una policy di protezione dei dati. 
+|===
+
+
+=== Risorse per la topologia
+
+Gli endpoint delle risorse di topologia forniscono l'accesso alle applicazioni non gestite e alle risorse di storage.
+
+[cols="20,10,70"]
+|===
+| Risorsa | Rilasciare | Descrizione 
+
+
+| Risorsa API | *22.11* | Gli endpoint delle risorse API forniscono accesso in sola lettura alle risorse Kubernetes in uno specifico cluster gestito. 
+
+
+| App | 21.04 | Le risorse applicative rappresentano tutte le applicazioni Kubernetes, incluse quelle non gestite da Astra. 
+
+
+| AppMirror | 22.08 | Le risorse di AppMirror rappresentano le risorse di AppMirror da fornire per la gestione delle relazioni di mirroring delle applicazioni. 
+
+
+| Bucket | 21.08 | Le risorse del bucket rappresentano i bucket cloud S3 utilizzati per memorizzare i backup delle applicazioni gestite da Astra. 
+
+
+| Cloud | 21.08 | Le risorse cloud rappresentano i cloud a cui i client Astra possono connettersi per gestire cluster e applicazioni. 
+
+
+| Cluster | 21.08 | Le risorse del cluster rappresentano i cluster Kubernetes non gestiti da Kubernetes. 
+
+
+| Nodo del cluster | 21.12 | Le risorse dei nodi del cluster forniscono una risoluzione aggiuntiva consentendo di accedere ai singoli nodi all'interno di un cluster Kubernetes. 
+
+
+| Cluster gestito | 21.08 | Le risorse del cluster gestito rappresentano i cluster Kubernetes attualmente gestiti da Kubernetes. 
+
+
+| Namespace | 21.12 | Le risorse dello spazio dei nomi forniscono l'accesso agli spazi dei nomi utilizzati all'interno di un cluster Kubernetes. 
+
+
+| Back-end dello storage | 21.08 | Le risorse di back-end dello storage rappresentano i provider di servizi di storage che possono essere utilizzati dai cluster e dalle applicazioni gestiti da Astra. 
+
+
+| Classe di storage | 21.08 | Le risorse della classe di storage rappresentano classi o tipi diversi di storage rilevati e disponibili per uno specifico cluster gestito. 
+
+
+| Volume | 21.04 | Le risorse dei volumi rappresentano i volumi di storage Kubernetes associati alle applicazioni gestite. 
+|===
+
+
+== Risorse ed endpoint aggiuntivi
+
+Esistono diverse risorse aggiuntive e endpoint che è possibile utilizzare per supportare un'implementazione Astra.
+
+
+NOTE: Queste risorse e questi endpoint non sono attualmente inclusi nella documentazione di riferimento dell'API REST di Astra Control.
+
+OpenAPI:: Gli endpoint OpenAPI forniscono l'accesso al documento JSON OpenAPI corrente e ad altre risorse correlate.
+OpenMetrics:: Gli endpoint OpenMetrics forniscono l'accesso alle metriche dell'account attraverso la risorsa OpenMetrics. Il supporto è disponibile con il modello di implementazione di Astra Control Center.
+

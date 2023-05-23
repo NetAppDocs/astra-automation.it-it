@@ -1,0 +1,37 @@
+---
+sidebar: sidebar 
+permalink: additional/diagnostics_support.html 
+keywords: diagnostics, support, debugging 
+summary: 'Con l"API REST di Astra Control sono disponibili diverse funzionalità di supporto che possono essere utilizzate per la diagnostica e il debug.' 
+---
+= Diagnostica e supporto
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Con l'API REST di Astra Control sono disponibili diverse funzionalità di supporto che possono essere utilizzate per la diagnostica e il debug.
+
+
+
+== Risorse API
+
+Ci sono diverse funzionalità di Astra esposte attraverso le risorse API che forniscono informazioni diagnostiche e supporto.
+
+[cols="20,80"]
+|===
+| Tipo | Descrizione 
+
+
+| Evento | Attività di sistema registrate come parte dell'elaborazione Astra. 
+
+
+| Notifica | Un sottoinsieme di eventi considerati abbastanza importanti da essere presentati all'utente. 
+
+
+| Notifica non letta | Le notifiche che devono ancora essere lette o recuperate dall'utente. 
+|===

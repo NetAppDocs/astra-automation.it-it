@@ -1,0 +1,106 @@
+---
+sidebar: sidebar 
+permalink: get-started/prepare_to_use_workflows.html 
+keywords: workflows, prepare workflows, use workflows 
+summary: 'Prima di utilizzarli con un"implementazione live, è necessario conoscere l"organizzazione e il formato dei flussi di lavoro Astra.' 
+---
+= Preparati a utilizzare i flussi di lavoro
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Prima di utilizzarli con un'implementazione live, è necessario conoscere l'organizzazione e il formato dei flussi di lavoro Astra.
+
+
+
+== Introduzione
+
+Un _workflow_ è una sequenza di uno o più passaggi necessari per eseguire un'attività o un obiettivo amministrativo specifico. Ogni fase del flusso di lavoro di Astra Control è una delle seguenti:
+
+* REST API Call (con dettagli come ad esempio CURL e JSON)
+* Invocazione di un altro workflow Astra
+* Attività correlate a varie attività (come prendere una decisione di progettazione richiesta)
+
+
+I flussi di lavoro includono i passaggi principali e i parametri necessari per eseguire ogni attività. Forniscono un punto di partenza per personalizzare il tuo ambiente di automazione.
+
+
+
+== Parametri di input comuni
+
+I parametri di input descritti di seguito sono comuni a tutti gli esempi di curl utilizzati per illustrare una chiamata API REST.
+
+
+NOTE: Poiché questi parametri di input sono universalmente richiesti, non vengono descritti ulteriormente nei singoli flussi di lavoro. Se si utilizzano parametri di input aggiuntivi per un esempio specifico di curl, questi sono descritti nella sezione *parametri di input aggiuntivi*.
+
+
+
+=== Parametri del percorso
+
+Il percorso dell'endpoint utilizzato con ogni chiamata API REST include i seguenti parametri. Vedere anche link:../rest-core/url_format.html["Formato URL"] per ulteriori informazioni.
+
+ID account:: Questo è il valore UUIDv4 che identifica l'account Astra in cui viene eseguita l'operazione API. Vedere link:../get-started/get_api_token.html["Ottieni un token API"] Per ulteriori informazioni su come individuare l'ID account.
+
+
+
+
+=== Intestazioni delle richieste
+
+A seconda della chiamata API REST, potrebbe essere necessario includere diverse intestazioni di richiesta.
+
+Autorizzazione:: Tutte le chiamate API nei flussi di lavoro richiedono un token API per identificare l'utente. È necessario includere il token in `Authorization` intestazione della richiesta. Vedere link:../get-started/get_api_token.html["Ottieni un token API"] Per ulteriori informazioni sulla generazione di un token API.
+Tipo di contenuto:: Con le richieste HTTP POST e PUT in cui JSON è incluso nel corpo della richiesta, è necessario dichiarare il tipo di supporto in base alla risorsa Astra. Ad esempio, è possibile includere l'intestazione `Content-Type: application/astra-appSnap+json` quando si crea uno snapshot per un'applicazione gestita.
+Accettare:: È possibile dichiarare il tipo di supporto specifico del contenuto previsto nella risposta in base alla risorsa Astra. Ad esempio, è possibile includere l'intestazione `Accept: application/astra-appBackup+json` quando si elencano i backup per un'applicazione gestita. Tuttavia, per semplicità, i campioni di arricciatura nei flussi di lavoro accettano tutti i tipi di supporto.
+
+
+
+
+== Presentazione di token e identificatori
+
+Il token API e gli altri valori ID utilizzati con gli esempi di curl sono opachi e non sono comprensibili. Per migliorare la leggibilità dei campioni, non vengono utilizzati i valori token e ID effettivi. Piuttosto, vengono utilizzate parole chiave riservate più piccole che hanno diversi benefici:
+
+* I campioni Curl e JSON sono più chiari e comprensibili.
+* Poiché tutte le parole chiave utilizzano lo stesso formato con parentesi quadre e lettere maiuscole, è possibile identificare rapidamente la posizione e il contenuto da inserire o estrarre.
+* Nessun valore viene perso perché i parametri originali non possono essere copiati e utilizzati con un'implementazione effettiva.
+
+
+Ecco alcune delle parole chiave riservate più comuni utilizzate negli esempi di curl. Questo elenco non è esaustivo e vengono utilizzate parole chiave aggiuntive in base alle necessità. Il loro significato dovrebbe essere ovvio in base al contesto.
+
+[cols="25,15,60"]
+|===
+| Parola chiave | Tipo | Descrizione 
+
+
+| <ACCOUNT_ID> | Percorso | Il valore UUIDv4 che identifica l'account in cui viene eseguita l'operazione API. 
+
+
+| <API_TOKEN> | Intestazione | Il token del bearer che identifica e autorizza il chiamante. 
+
+
+| <APP_ID> | Percorso | Il valore UUIDv4 che identifica l'applicazione per la chiamata API. 
+|===
+
+
+== Categorie di workflow
+
+Sono disponibili due ampie categorie di flussi di lavoro Astra in base al modello di implementazione. Se si utilizza Astra Control Center, è necessario iniziare con i flussi di lavoro dell'infrastruttura e passare ai flussi di lavoro di gestione. Quando si utilizza Astra Control Service, in genere è possibile accedere direttamente ai flussi di lavoro di gestione.
+
+
+NOTE: Gli esempi di arricciatura nei flussi di lavoro utilizzano l'URL per Astra Control Service. È necessario modificare l'URL quando si utilizza l'Astra Control Center on-premise in base all'ambiente in uso.
+
+
+
+=== Flussi di lavoro dell'infrastruttura
+
+Questi flussi di lavoro si occupano dell'infrastruttura Astra, inclusi credenziali, bucket e backend dello storage. Sono necessari con Astra Control Center, ma nella maggior parte dei casi possono essere utilizzati anche con Astra Control Service. I flussi di lavoro si concentrano sulle attività necessarie per stabilire e gestire un cluster gestito da Astra.
+
+
+
+=== Workflow di gestione
+
+È possibile utilizzare questi flussi di lavoro dopo aver gestito un cluster. I flussi di lavoro si concentrano sulla protezione delle applicazioni e supportano operazioni come il backup, il ripristino e la clonazione di un'applicazione.

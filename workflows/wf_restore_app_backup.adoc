@@ -1,0 +1,76 @@
+---
+sidebar: sidebar 
+permalink: workflows/wf_restore_app_backup.html 
+keywords:  
+summary: 'È possibile ripristinare un"applicazione creando una nuova applicazione da un backup.' 
+---
+= Ripristinare un'applicazione da un backup
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+È possibile ripristinare un'applicazione creando una nuova applicazione da un backup.
+
+
+
+=== 1. Selezionare l'applicazione da ripristinare
+
+Eseguire il flusso di lavoro link:wf_list_man_apps.html["Elencare le applicazioni"] e selezionare l'applicazione che si desidera clonare. Per la chiamata DI PAUSA utilizzata per ripristinare l'applicazione sono necessari diversi valori di risorse.
+
+
+
+=== 2. Selezionare il backup da utilizzare
+
+Eseguire il flusso di lavoro link:wf_list_backups.html["Elencare i backup"] e selezionare il backup che si desidera utilizzare.
+
+
+
+=== 3. Ripristinare l'applicazione
+
+Eseguire la seguente chiamata API REST. È necessario fornire l'ID per un backup (come mostrato di seguito) o uno snapshot.
+
+[cols="25,75"]
+|===
+| Metodo HTTP | Percorso 
+
+
+| IN PRIMO PIANO | /accounts/{account_id}/k8s/v2/apps/{app_id} 
+|===
+
+
+===== Parametri di input aggiuntivi
+
+Oltre ai parametri comuni a tutte le chiamate API REST, negli esempi di curl vengono utilizzati anche i seguenti parametri.
+
+[cols="25,10,10,55"]
+|===
+| Parametro | Tipo | Obbligatorio | Descrizione 
+
+
+| JSON | Corpo | Sì | Fornisce i parametri per l'applicazione clonata. Vedere l'esempio riportato di seguito. 
+|===
+
+
+===== Esempio di input JSON
+
+[source, json]
+----
+{
+  "type": "application/astra-app",
+  "version": "2.0",
+  "backupID": "e24515bd-a28e-4b28-b832-f3c74dbf32fb"
+}
+----
+
+
+===== Esempio di curl: Ripristinare un'applicazione in uso da un backup
+
+[source, curl]
+----
+curl --location -i --request PUT 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v2/apps/<APP_ID>' --header 'Content-Type: application/astra-app+json' --header '*/*' --header 'ForceUpdate: true' --header 'Authorization: Bearer <API_TOKEN>' --data @JSONinput
+----

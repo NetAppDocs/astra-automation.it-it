@@ -1,0 +1,35 @@
+---
+sidebar: sidebar 
+permalink: get-started/kubernetes_concepts.html 
+keywords: kubernetes, objects, namespaces, labels 
+summary: 'Esistono diversi concetti di Kubernetes rilevanti quando si utilizza l"API ASTRA REST.' 
+---
+= Concetti di base di Kubernetes
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Esistono diversi concetti di Kubernetes rilevanti quando si utilizza l'API ASTRA REST.
+
+
+
+== Oggetti
+
+Gli oggetti mantenuti in un ambiente Kubernetes sono entità persistenti che rappresentano la configurazione del cluster. Questi oggetti descrivono collettivamente lo stato del sistema, incluso il carico di lavoro del cluster.
+
+
+
+== Spazi dei nomi
+
+Gli spazi dei nomi forniscono una tecnica per isolare le risorse all'interno di un singolo cluster. Questa struttura organizzativa è utile quando si dividono i tipi di lavoro, gli utenti e le risorse. Gli oggetti con un _ambito dello spazio dei nomi_ devono essere univoci all'interno dello spazio dei nomi, mentre quelli con un _ambito del cluster_ devono essere univoci nell'intero cluster.
+
+
+
+== Etichette
+
+Le etichette possono essere associate agli oggetti Kubernetes. Descrivono gli attributi che utilizzano coppie chiave-valore e possono imporre un'organizzazione arbitraria sul cluster, che può essere utile a un'organizzazione ma non è al di fuori dell'operazione Kubernetes principale.

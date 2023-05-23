@@ -1,0 +1,104 @@
+---
+sidebar: sidebar 
+permalink: rest-core/resources_collections.html 
+keywords: resources, instances, collections, uuid, uuidv4, state 
+summary: 'L"API REST di Astra Control fornisce l"accesso alle istanze di risorse e alle raccolte di istanze di risorse.' 
+---
+= Risorse e raccolte
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+L'API REST di Astra Control fornisce l'accesso alle istanze di risorse e alle raccolte di istanze di risorse.
+
+
+NOTE: Concettualmente, una RISORSA REST* è simile a un *oggetto* come definito con i linguaggi e i sistemi di programmazione orientata agli oggetti (OOP). A volte questi termini vengono utilizzati in modo intercambiabile. In generale, la "risorsa" è preferibile quando viene utilizzata nel contesto dell'API REST esterna, mentre l'oggetto viene utilizzato per i corrispondenti dati dell'istanza stateful memorizzati nel server.
+
+
+
+== Attributi delle risorse Astra
+
+L'API REST di Astra Control è conforme ai principi di progettazione RESTful. Ogni istanza di risorsa Astra viene creata in base a un tipo di risorsa ben definito. Un insieme di istanze di risorse dello stesso tipo viene definito *insieme*. Le chiamate API agiscono su singole risorse o raccolte di risorse.
+
+.Tipi di risorse
+I tipi di risorse inclusi nell'API REST di Astra Control hanno le seguenti caratteristiche:
+
+* Ogni tipo di risorsa viene definito utilizzando uno schema (in genere in JSON)
+* Ogni schema delle risorse include il tipo e la versione delle risorse
+* I tipi di risorse sono univoci a livello globale
+
+
+.Istanze di risorse
+Le istanze di risorse disponibili tramite l'API REST di Astra Control hanno le seguenti caratteristiche:
+
+* Le istanze di risorse vengono create in base a un singolo tipo di risorsa
+* Il tipo di risorsa viene indicato utilizzando il valore del tipo di supporto
+* Le istanze sono composte da dati stateful gestiti dal servizio Astra
+* Ogni istanza è accessibile attraverso un URL univoco e di lunga durata
+* Nei casi in cui un'istanza di risorsa può avere più di una rappresentazione, è possibile utilizzare diversi tipi di supporto per richiedere la rappresentazione desiderata
+
+
+.Raccolte di risorse
+Le raccolte di risorse disponibili tramite l'API REST di Astra Control hanno le seguenti caratteristiche:
+
+* L'insieme di istanze di risorse di un singolo tipo di risorsa è noto come insieme
+* Le raccolte di risorse hanno un URL unico e di lunga durata
+
+
+.Identificatori delle istanze
+A ogni istanza di risorsa viene assegnato un identificatore al momento della creazione. Questo identificatore è un valore UUIDv4 a 128 bit. I valori UUIDv4 assegnati sono globalmente univoci e immutabili. Dopo aver eseguito una chiamata API che crea una nuova istanza, viene restituito al chiamante un URL con l'id associato in a. `Location` Intestazione della risposta HTTP. È possibile estrarre l'identificatore e utilizzarlo nelle chiamate successive quando si fa riferimento all'istanza della risorsa.
+
+
+NOTE: L'identificatore di risorsa è la chiave principale utilizzata per le raccolte.
+
+
+
+== Struttura comune per le risorse Astra
+
+Ogni risorsa Astra Control viene definita utilizzando una struttura comune.
+
+.Dati comuni
+Ogni risorsa Astra contiene i valori chiave mostrati nella tabella seguente.
+
+[cols="15,85"]
+|===
+| Chiave | Descrizione 
+
+
+| tipo | Un tipo di risorsa globalmente univoco, noto come *tipo di risorsa*. 
+
+
+| versione | Identificatore di versione noto come *versione della risorsa*. 
+
+
+| id | Identificatore univoco globale noto come *resource identifier*. 
+
+
+| metadati | Oggetto JSON contenente varie informazioni, incluse le etichette utente e di sistema. 
+|===
+.Oggetto metadata
+L'oggetto JSON di metadati incluso in ogni risorsa Astra contiene i valori chiave mostrati nella tabella seguente.
+
+[cols="15,85"]
+|===
+| Chiave | Descrizione 
+
+
+| etichette | Array JSON di etichette specificate dal client associate alla risorsa. 
+
+
+| CreationTimestamp | Stringa JSON contenente un indicatore data e ora che indica quando è stata creata la risorsa. 
+
+
+| ModificationTimestamp | Stringa JSON contenente un timestamp formattato ISO-8601 che indica l'ultima modifica della risorsa. 
+
+
+| CreatedBy | Stringa JSON contenente l'identificatore UUIDv4 dell'id utente che ha creato la risorsa. Se la risorsa è stata creata da un componente di sistema interno e non esiste un UUID associato all'entità di creazione, viene utilizzato l'UID *null*. 
+|===
+.Stato della risorsa
+Risorse selezionate a `state` valore utilizzato per orchestrare le transizioni del ciclo di vita e controllare l'accesso.

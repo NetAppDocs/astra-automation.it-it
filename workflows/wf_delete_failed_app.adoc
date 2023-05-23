@@ -1,0 +1,53 @@
+---
+sidebar: sidebar 
+permalink: workflows/wf_delete_failed_app.html 
+keywords:  
+summary: 'Potrebbe non essere possibile rimuovere un"applicazione gestita in caso di backup o snapshot in stato di errore. In questo caso, è possibile rimuovere manualmente l"applicazione.' 
+---
+= Eliminare un'applicazione non riuscita
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Potrebbe non essere possibile rimuovere un'applicazione gestita in caso di backup o snapshot in stato di errore. In questo caso, puoi rimuovere manualmente l'applicazione utilizzando il flusso di lavoro descritto di seguito.
+
+
+
+=== 1. Selezionare l'applicazione da eliminare
+
+Eseguire il flusso di lavoro link:wf_list_man_apps.html["Elencare le applicazioni"] e selezionare l'applicazione che si desidera rimuovere.
+
+
+
+=== 2. Elencare i backup esistenti per l'applicazione
+
+Eseguire il flusso di lavoro link:wf_list_backups.html["Elencare i backup"].
+
+
+
+=== 3. Eliminare tutti i backup
+
+Eliminare tutti i backup delle applicazioni eseguendo il workflow link:wf_delete_backup.html["Eliminare un backup"] per ogni backup nell'elenco.
+
+
+
+=== 4. Elencare le snapshot esistenti per l'applicazione
+
+Eseguire il flusso di lavoro link:wf_list_snapshots.html["Elencare le istantanee"].
+
+
+
+=== 5. Eliminare tutte le istantanee
+
+Eseguire il flusso di lavoro link:wf_delete_snapshot.html["Eliminare uno snapshot"] da ogni snapshot nell'elenco.
+
+
+
+=== 6. Rimuovere l'applicazione
+
+Eseguire il flusso di lavoro link:wf_unmanage_app.html["Annullare la gestione di un'applicazione"] per rimuovere l'applicazione.

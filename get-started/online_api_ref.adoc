@@ -1,0 +1,33 @@
+---
+sidebar: sidebar 
+permalink: get-started/online_api_ref.html 
+keywords: reference, api reference 
+summary: 'È possibile accedere ai dettagli delle chiamate REST API di Astra Control, inclusi i metodi HTTP, i parametri di input e le risposte. Questo riferimento completo è utile quando si sviluppano applicazioni di automazione utilizzando l"API REST.' 
+---
+= Riferimento API online
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+È possibile accedere ai dettagli delle chiamate REST API di Astra Control, inclusi i metodi HTTP, i parametri di input e le risposte. Questo riferimento completo è utile quando si sviluppano applicazioni di automazione utilizzando l'API REST.
+
+
+NOTE: La documentazione di riferimento API REST è attualmente fornita con Astra Control ed è disponibile online.
+
+.Prima di iniziare
+Hai bisogno di un account per Astra Control Center o Astra Control Service.
+
+.Fasi
+. Accedi ad Astra utilizzando le credenziali del tuo account.
++
+Accedere al seguente sito per Astra Control Service: link:https://astra.netapp.io["https://astra.netapp.io"^]
+
+. Fare clic sull'icona a forma di figura nella parte superiore destra della pagina e selezionare *API access*.
+. Nella parte superiore della pagina, fare clic sull'URL visualizzato sotto *API Documentation* (documentazione API).
+. Se richiesto, fornire nuovamente le credenziali dell'account.
+

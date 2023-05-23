@@ -1,0 +1,39 @@
+---
+sidebar: sidebar 
+permalink: workflows_infra/wf_list_clouds.html 
+keywords:  
+summary: Puoi elencare i cloud definiti e disponibili per un account Astra specifico. 
+---
+= Elencare i cloud
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Puoi elencare i cloud definiti e disponibili per un account Astra specifico.
+
+
+
+=== 1. Elencare i cloud
+
+Eseguire la seguente chiamata API REST per elencare i cloud.
+
+[cols="25,75"]
+|===
+| Metodo HTTP | Percorso 
+
+
+| OTTIENI | /accounts/{account_id}/topology/v1/cloud 
+|===
+
+
+===== Esempio di curl: Restituisce tutti i dati per tutti i cloud
+
+[source, curl]
+----
+curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/topology/v1/clouds' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----
