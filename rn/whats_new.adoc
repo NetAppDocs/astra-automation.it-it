@@ -18,6 +18,24 @@ NetApp aggiorna regolarmente l'API REST di Astra Control per offrire nuove funzi
 
 
 
+== 30 maggio 2023 (23.05)
+
+Questa versione include aggiornamenti selettivi dell'API REST.
+
+
+
+=== Operazioni di ripristino selettivo
+
+È possibile selezionare la classe di storage di destinazione durante le operazioni di ripristino o clonazione.
+
+
+
+=== Abilitare i pool ANF dinamici per i cluster autogestiti
+
+Quando si esegue il backup di un'applicazione gestita in un cluster privato on-premise che dispone di un backend di storage ANF, è ora possibile attivare la funzione di pool ANF dinamici fornendo un ID di abbonamento. Vedere link:../workflows_infra/wf_enable_anf_dyn_pools.html["Abilitare i pool ANF dinamici"] per ulteriori informazioni.
+
+
+
 == 25 aprile 2023 (23.04)
 
 Questa versione include aggiornamenti selettivi dell'API REST.

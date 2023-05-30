@@ -4,7 +4,7 @@ permalink: get-started/online_api_ref.html
 keywords: reference, api reference 
 summary: 'È possibile accedere ai dettagli delle chiamate REST API di Astra Control, inclusi i metodi HTTP, i parametri di input e le risposte. Questo riferimento completo è utile quando si sviluppano applicazioni di automazione utilizzando l"API REST.' 
 ---
-= Riferimento API online
+= Accedere alla documentazione di riferimento API Astra
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -16,18 +16,22 @@ summary: 'È possibile accedere ai dettagli delle chiamate REST API di Astra Con
 [role="lead"]
 È possibile accedere ai dettagli delle chiamate REST API di Astra Control, inclusi i metodi HTTP, i parametri di input e le risposte. Questo riferimento completo è utile quando si sviluppano applicazioni di automazione utilizzando l'API REST.
 
-
-NOTE: La documentazione di riferimento API REST è attualmente fornita con Astra Control ed è disponibile online.
-
 .Prima di iniziare
-Hai bisogno di un account per Astra Control Center o Astra Control Service.
+Sono necessarie le credenziali per accedere all'interfaccia utente Web Astra per la distribuzione. La procedura per accedere alla documentazione di riferimento è la stessa per Astra Control Service e Astra Control Center. Solo l'URL è diverso. Non è necessario un token API per accedere e visualizzare il documento di riferimento.
 
 .Fasi
-. Accedi ad Astra utilizzando le credenziali del tuo account.
+. Accedi ad Astra utilizzando le credenziali del tuo account come segue:
 +
-Accedere al seguente sito per Astra Control Service: link:https://astra.netapp.io["https://astra.netapp.io"^]
+** Servizio di controllo Astra: link:https://astra.netapp.io["https://astra.netapp.io"^]
+** Astra Control Center (Centro di controllo Astra): Utilizzare l'URL dell'ambiente locale stabilito durante l'installazione
+
 
 . Fare clic sull'icona a forma di figura nella parte superiore destra della pagina e selezionare *API access*.
 . Nella parte superiore della pagina, fare clic sull'URL visualizzato sotto *API Documentation* (documentazione API).
-. Se richiesto, fornire nuovamente le credenziali dell'account.
 
+
+.Risultato
+La pagina Swagger viene avviata in una nuova finestra o scheda. L'URL include l'ID dell'account con cui hai effettuato l'accesso.
+
+.Quali sono le prossime novità?
+Facoltativamente, è possibile eseguire una chiamata API dalla pagina Swagger. Vedere link:../get-started/online_api_call.html["Eseguire una chiamata API Astra REST"] per ulteriori informazioni.
