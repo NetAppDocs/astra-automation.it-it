@@ -451,6 +451,31 @@
 
 
 
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/it-it/astra-automation/pdfs/sidebar/Riferimento_API_online.pdf" 
+            
+          >
+            <img src="/it-it/astra-automation/images/pdf.png" alt="" width="16" height="16"/>
+            Riferimento API online
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
 
         </li>
       </ul>
@@ -696,6 +721,8 @@
             Storage
           </a>
           
+
+
 
 
 
@@ -2623,11 +2650,27 @@
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Riferimento API online"
-      data-li-level="2#" 
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Riferimento API online</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Accedere al documento di riferimento"
+      data-li-level="3#" 
       class=" "
     ><a class="na-navbar-padding" href="/it-it/astra-automation/get-started/online_api_ref.html">
-        Riferimento API online
-      </a></li></ul></li><li 
+        Accedere al documento di riferimento
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Eseguire una chiamata API Astra REST"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/astra-automation/get-started/online_api_call.html">
+        Eseguire una chiamata API Astra REST
+      </a></li></ul></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Implementazione core REST"
       data-li-level="1" 
@@ -2876,6 +2919,13 @@
       class=" "
     ><a class="na-navbar-padding" href="/it-it/astra-automation/workflows_infra/wf_list_storage_backends.html">
         Elenca i backend di storage
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Abilitare i pool ANF dinamici"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/astra-automation/workflows_infra/wf_enable_anf_dyn_pools.html">
+        Abilitare i pool ANF dinamici
       </a></li></ul></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Workflow di gestione"
@@ -5598,7 +5648,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-05-23 17:02:34 +0000">05/23/2023</time>
+    <time datetime="2023-05-30 22:06:19 +0000">05/30/2023</time>
     
   
 
@@ -5618,13 +5668,33 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="25-aprile-2023-23-04">25 aprile 2023 (23.04)</h2>
+<h2 id="30-maggio-2023-23-05">30 maggio 2023 (23.05)</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Questa versione include aggiornamenti selettivi dell&#8217;API REST.</p>
 </div>
 <div class="sect2">
 <h3 id="operazioni-di-ripristino-selettivo">Operazioni di ripristino selettivo</h3>
+<div class="paragraph">
+<p>È possibile selezionare la classe di storage di destinazione durante le operazioni di ripristino o clonazione.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="abilitare-i-pool-anf-dinamici-per-i-cluster-autogestiti">Abilitare i pool ANF dinamici per i cluster autogestiti</h3>
+<div class="paragraph">
+<p>Quando si esegue il backup di un&#8217;applicazione gestita in un cluster privato on-premise che dispone di un backend di storage ANF, è ora possibile attivare la funzione di pool ANF dinamici fornendo un ID di abbonamento. Vedere <a href="../workflows_infra/wf_enable_anf_dyn_pools.html">"Abilitare i pool ANF dinamici"</a> per ulteriori informazioni.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="25-aprile-2023-23-04">25 aprile 2023 (23.04)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Questa versione include aggiornamenti selettivi dell&#8217;API REST.</p>
+</div>
+<div class="sect2">
+<h3 id="operazioni-di-ripristino-selettivo-2">Operazioni di ripristino selettivo</h3>
 <div class="paragraph">
 <p>È possibile includere o escludere in modo selettivo le risorse applicative durante le operazioni di ripristino. Questa operazione viene eseguita utilizzando una regola di filtro basata su uno spazio dei nomi, un nome, un&#8217;etichetta o un valore GroupVersionKind specifico.</p>
 </div>
