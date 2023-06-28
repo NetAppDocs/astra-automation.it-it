@@ -5567,7 +5567,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-06-28 11:58:03 +0000">06/28/2023</time>
+    <time datetime="2023-06-28 16:08:11 +0000">06/28/2023</time>
     
   
 
@@ -5722,7 +5722,7 @@
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">items</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">array[Any of: <a href="#cluster_1.4_get_response_body">cluster_1.4_get_response_body</a>, array[]]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">array[Any of: <a href="#cluster_1.5_get_response_body">cluster_1.5_get_response_body</a>, array[]]</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">True</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
@@ -5740,7 +5740,7 @@
 <div class="content">
 <pre class="highlight"><code class="language-json" data-lang="json">{
   "type": "application/astra-clusters",
-  "version": "1.4",
+  "version": "1.5",
   "items": [
     [
       "0f284377-e5dc-4dcd-bacd-3197f2b8a347",
@@ -6199,8 +6199,8 @@ If not specified on update, the metadata object&#8217;s labels, creationTimestam
 </tr>
 </tbody>
 </table>
-<div id="cluster_1" class="paragraph 4_get_response_body api-collapsible-fifth-title">
-<p>cluster_1.4_get_response_body</p>
+<div id="cluster_1" class="paragraph 5_get_response_body api-collapsible-fifth-title">
+<p>cluster_1.5_get_response_body</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -6258,6 +6258,9 @@ Defined values are:</p>
 </li>
 <li>
 <p>"1.4"</p>
+</li>
+<li>
+<p>"1.5"</p>
 </li>
 </ul>
 </div></div></td>
@@ -6770,7 +6773,9 @@ Defined values are:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Conforms to the Astra Identifier Schema</p>
+<p>Conforms to the Astra Identifier Schema
+ If privateRouteID and connectorCapabilities with at least the relay option are provided, credentialID is optional. If they are not provided, credentialID is required, otherwise, an error is generated.
+If credentialID and a relay capable connector is provided, an error is generated.</p>
 </li>
 </ul>
 </div></div></td>
@@ -6829,6 +6834,14 @@ Defined values are:</p>
 <p>Maximum length: 255</p>
 </li>
 </ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">connectorCapabilities</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">array[string]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Capabilities of the connector that is associated with this cluster.  Optional for backwards compatibility.  If not present, proxy is the assumed capability.</p>
 </div></div></td>
 </tr>
 <tr>

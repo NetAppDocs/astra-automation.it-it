@@ -5567,7 +5567,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-06-28 11:57:56 +0000">06/28/2023</time>
+    <time datetime="2023-06-28 16:08:04 +0000">06/28/2023</time>
     
   
 
@@ -5759,7 +5759,7 @@
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">items</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">array[Any of: <a href="#certificate_1.0_get_response_body">certificate_1.0_get_response_body</a>, array[]]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">array[Any of: <a href="#certificate_1.1_get_response_body">certificate_1.1_get_response_body</a>, array[]]</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">True</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
@@ -5777,7 +5777,7 @@
 <div class="content">
 <pre class="highlight"><code class="language-json" data-lang="json">{
   "type": "application/astra-certificates",
-  "version": "1.0",
+  "version": "1.1",
   "items": [
     [
       "f97f3441-075e-4f9b-9d1e-47f9f62a3fc4",
@@ -6022,6 +6022,77 @@
   "title": "Service not ready",
   "detail": "Currently, the service can't respond to this request.",
   "status": "503"
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="response-5">Response</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>Status: 409, Conflict</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Required</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">True</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">title</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">True</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">detail</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">True</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">True</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">correlationID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="example-response-5">Example response</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">{
+  "type": "https://astra.netapp.io/problems/164",
+  "title": "Requested resource in unexpected state",
+  "detail": "The requested resource can't be returned because it isn't in the expected state. Wait for the conflict to be resolved and retry the request.",
+  "status": "409"
 }</code></pre>
 </div>
 </div>
@@ -6274,8 +6345,8 @@ If not specified on update, the metadata object&#8217;s labels, creationTimestam
 </tr>
 </tbody>
 </table>
-<div id="certificate_1" class="paragraph 0_get_response_body api-collapsible-fifth-title">
-<p>certificate_1.0_get_response_body</p>
+<div id="certificate_1" class="paragraph 1_get_response_body api-collapsible-fifth-title">
+<p>certificate_1.1_get_response_body</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -6321,6 +6392,9 @@ Defined values are:</p>
 <ul>
 <li>
 <p>"1.0"</p>
+</li>
+<li>
+<p>"1.1"</p>
 </li>
 </ul>
 </div></div></td>
