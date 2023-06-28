@@ -1030,7 +1030,6 @@
   <block id="ba793efaa4293b35388d140ee9308a68" category="paragraph">Fonte autorevole per gli standard web e Internet mantenuta come una raccolta di documenti RFC numerati in modo univoco.</block>
   <block id="78ceba6718263592394adb03dc11471c" category="summary">Si consiglia di esaminare tutti i problemi noti relativi alla release corrente relativi all'API REST di Astra Control. I problemi noti identificano i problemi che potrebbero impedire il corretto utilizzo del prodotto.</block>
   <block id="95dc0391ce7b396d7dd5622284e8fc3e" category="doc">Problemi noti</block>
-  <block id="34d23ad383fb9597324019dc1045fabb" category="admonition">Non ci sono nuovi problemi noti con la release 23.01 dell'API REST di Astra Control. Tutti i problemi descritti di seguito sono stati rilevati nelle release precedenti e sono ancora applicabili alla release corrente.</block>
   <block id="73e9416791f56a93d23840b6c27ae436" category="paragraph">Consulta una delle seguenti pagine in base al modello di implementazione.</block>
   <block id="eb6a5d80177fc44f1a834a5fac76b612" category="inline-link">Problemi noti per Astra Control Service</block>
   <block id="1a8244f3a147b8df7de50e9d16df07ac" category="list-text"><block ref="1a8244f3a147b8df7de50e9d16df07ac" category="inline-link-rx"></block></block>
@@ -1221,12 +1220,19 @@
   <block id="25e18fd10fb78e25d46577d809123272" category="paragraph">Eseguire il flusso di lavoro <block ref="531c5c815f0a3a3ceb921ff9baf4d1b9" category="inline-link-macro-rx"></block>. Il pool di capacità in cui è presente il volume persistente originale si espanderà e si ridurrà automaticamente.</block>
   <block id="96422ff09af7e6fad796f820c7b0e17c" category="section-title">4. Esaminare il registro eventi</block>
   <block id="5212b6690e36338eb93a0191226877d7" category="paragraph">Gli eventi di attività vengono registrati durante il backup. Eseguire il flusso di lavoro <block ref="0828f7558c056f6ee4409551e28d3465" category="inline-link-macro-rx"></block> per visualizzare i messaggi.</block>
-  <block id="2aeee044c45621f3427b4056855a973c" category="list-text">Servizio di controllo Astra 23.05</block>
-  <block id="a1a82e7175905cefa5377393fc5e0e4b" category="inline-link">Documentazione di Astra Control Service 23.05</block>
-  <block id="87baaf02b03cc0785a4a9e2b89d4cdc4" category="list-text"><block ref="87baaf02b03cc0785a4a9e2b89d4cdc4" category="inline-link-rx"></block></block>
   <block id="162c594ec970f3cd4eb2f6d6d2311381" category="section-title">30 maggio 2023 (23.05)</block>
   <block id="3ecf6cf3aaad58d22b055973cbbae0d4" category="paragraph">È possibile selezionare la classe di storage di destinazione durante le operazioni di ripristino o clonazione.</block>
   <block id="5917ef890e9d60f9bf3cc41a2723766a" category="inline-link-macro">Abilitare i pool ANF dinamici</block>
   <block id="10331a659c4281dea77fa4165e988593" category="paragraph">Quando si esegue il backup di un'applicazione gestita in un cluster privato on-premise che dispone di un backend di storage ANF, è ora possibile attivare la funzione di pool ANF dinamici fornendo un ID di abbonamento. Vedere <block ref="0d6a3e3d7740d3989d225fce5dc1ad21" category="inline-link-macro-rx"></block> per ulteriori informazioni.</block>
   <block id="157ecd713825d83c3595df6b4c0c11af" category="sidebar">Accedere al documento di riferimento</block>
+  <block id="33bb807546f543c0b9c58cf7b7e62a4c" category="section-title">27 giugno 2023 (23.06)</block>
+  <block id="21e74b3c28d006317f38a2bc8eb1da3b" category="section-title">Azure Marketplace</block>
+  <block id="31553f2d81caf3af40330c67fcb7b3d6" category="inline-link">Impostare la fatturazione</block>
+  <block id="58e46bdad56d44447c43649a3b5b4f7b" category="paragraph">Gli abbonamenti a Azure Marketplace vengono fatturati ora anziché al minuto. Vedere anche<block ref="633dc17422f08a9c882e1f52f9a90b82" category="inline-link-rx"></block>.</block>
+  <block id="8e926a216f6adb19574523270dec9729" category="section-title">Ottimizzazione Restic</block>
+  <block id="a73241b184629bdaef0ee68446abeb15" category="paragraph">È possibile abilitare l'ottimizzazione delle performance per i backup dei resotici utilizzando il flag<block ref="6fb6e873ef6d6ac86ac763f089d95fa1" prefix=" " category="inline-code"></block> nel nuovo<block ref="4e513e9fe169e7733cdfe334575b2dec" prefix=" " category="inline-code"></block> Risorsa API delle impostazioni. Quando è impostato su<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block>, il numero di<block ref="47964ec30dfb028cc802262834e3577b" prefix=" " category="inline-code"></block> Questo tipo di utilizzo è aumentato quando si esegue il backup di grandi volumi in un container Azure. Per volumi da 1 TB a 4 TB, vengono utilizzate 128 connessioni. Per volumi superiori a 4 TB, vengono utilizzate 512 connessioni back-end.</block>
+  <block id="60bc44a6f8b10e394c8d7a408e94fecc" category="list-text">Servizio di controllo Astra 23.06</block>
+  <block id="3987948e759f27889fb63521255c084f" category="inline-link">Documentazione di Astra Control Service 23.06</block>
+  <block id="8de8be2639041c77c0c0e3c2870c7446" category="list-text"><block ref="8de8be2639041c77c0c0e3c2870c7446" category="inline-link-rx"></block></block>
+  <block id="529552afdc21e1a01b8e807df92fe719" category="admonition">Non ci sono nuovi problemi noti con la release 23.06 dell'API REST di Astra Control. Tutti i problemi descritti di seguito sono stati rilevati nelle release precedenti e sono ancora applicabili alla release corrente.</block>
 </blocks>
