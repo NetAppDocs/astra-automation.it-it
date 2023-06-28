@@ -83,7 +83,7 @@
       head.appendChild(onetrustScript);
     }addConsent("72570c5c-fe30-465f-b0e0-b77f7fb4ae34");
     addAdobeLaunch("launch-e9ff3acac59f");
-    addGoogleAnalytics("UA-81697994-3");function OptanonWrapper() { }
+    addGoogleAnalytics("G-KYN6T440WN");function OptanonWrapper() { }
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
@@ -5567,7 +5567,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-05-31 15:08:52 +0000">05/31/2023</time>
+    <time datetime="2023-06-28 11:58:05 +0000">06/28/2023</time>
     
   
 
@@ -5663,9 +5663,6 @@ Defined values are:</p>
 <li>
 <p>"application/astra-storageBackend"</p>
 </li>
-<li>
-<p>example: application/astra-storageBackend</p>
-</li>
 </ul>
 </div></div></td>
 </tr>
@@ -5691,9 +5688,6 @@ Defined values are:</p>
 <li>
 <p>"1.3"</p>
 </li>
-<li>
-<p>example: 1.3</p>
-</li>
 </ul>
 </div></div></td>
 </tr>
@@ -5713,9 +5707,6 @@ Defined values are:</p>
 <li>
 <p>Maximum length: 63</p>
 </li>
-<li>
-<p>example: st1-45</p>
-</li>
 </ul>
 </div></div></td>
 </tr>
@@ -5731,6 +5722,9 @@ Defined values are:</p>
 <ul>
 <li>
 <p>"ontap" - The storage backend represents a NetApp ONTAP system</p>
+</li>
+<li>
+<p>enum: ["ontap"]</p>
 </li>
 <li>
 <p>example: ontap</p>
@@ -5754,9 +5748,6 @@ Defined values are:</p>
 <li>
 <p>Maximum length: 63</p>
 </li>
-<li>
-<p>example: 9.8.1</p>
-</li>
 </ul>
 </div></div></td>
 </tr>
@@ -5775,9 +5766,6 @@ Defined values are:</p>
 </li>
 <li>
 <p>Maximum length: 63</p>
-</li>
-<li>
-<p>example: SDSCredentialCluster1</p>
 </li>
 </ul>
 </div></div></td>
@@ -5855,9 +5843,6 @@ Defined values are:</p>
 <li>
 <p>"application/astra-storageBackend"</p>
 </li>
-<li>
-<p>example: application/astra-storageBackend</p>
-</li>
 </ul>
 </div></div></td>
 </tr>
@@ -5883,9 +5868,6 @@ Defined values are:</p>
 <li>
 <p>"1.3"</p>
 </li>
-<li>
-<p>example: 1.3</p>
-</li>
 </ul>
 </div></div></td>
 </tr>
@@ -5901,9 +5883,6 @@ Defined values are:</p>
 <ul>
 <li>
 <p>Conforms to the UUIDv4 Schema</p>
-</li>
-<li>
-<p>example: 04ad4237-3c89-5ca5-8a40-282ab5eb6428</p>
 </li>
 </ul>
 </div></div></td>
@@ -5924,9 +5903,6 @@ Defined values are:</p>
 <li>
 <p>Maximum length: 63</p>
 </li>
-<li>
-<p>example: st1-45</p>
-</li>
 </ul>
 </div></div></td>
 </tr>
@@ -5942,6 +5918,9 @@ Defined values are:</p>
 <ul>
 <li>
 <p>"ontap" - The storage backend represents a NetApp ONTAP system</p>
+</li>
+<li>
+<p>enum: ["ontap"]</p>
 </li>
 <li>
 <p>example: ontap</p>
@@ -5965,9 +5944,6 @@ Defined values are:</p>
 <li>
 <p>Maximum length: 63</p>
 </li>
-<li>
-<p>example: 9.8.1</p>
-</li>
 </ul>
 </div></div></td>
 </tr>
@@ -5986,9 +5962,6 @@ Defined values are:</p>
 </li>
 <li>
 <p>Maximum length: 63</p>
-</li>
-<li>
-<p>example: SDSCredentialCluster1</p>
 </li>
 </ul>
 </div></div></td>
@@ -6033,9 +6006,6 @@ Defined values are:</p>
 </li>
 <li>
 <p>"failed" - The storage backend is in an unavailable state</p>
-</li>
-<li>
-<p>example: running</p>
 </li>
 </ul>
 </div></div></td>
@@ -6094,9 +6064,6 @@ Defined values are:</p>
 <li>
 <p>"managed" - The storage backend is in a "running" or "unknown" state and is under management</p>
 </li>
-<li>
-<p>example: managed</p>
-</li>
 </ul>
 </div></div></td>
 </tr>
@@ -6140,9 +6107,6 @@ Defined values are:</p>
 </li>
 <li>
 <p>"critical" - The resource has known issues that prevent it from providing services in accordance with the interface specification</p>
-</li>
-<li>
-<p>example: normal</p>
 </li>
 </ul>
 </div></div></td>
@@ -6189,6 +6153,9 @@ Defined values are:</p>
 <p>"unknown" - The storage backend protection policy conformance cannot be determined</p>
 </li>
 <li>
+<p>enum: ["protected", "partial", "none", "unknown"]</p>
+</li>
+<li>
 <p>example: protected</p>
 </li>
 </ul>
@@ -6227,6 +6194,13 @@ Defined values are:</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>JSON object containing specific information related to ONTAP clusters.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>additionalProperties: false</p>
+</li>
+</ul>
 </div></div></td>
 </tr>
 <tr>
@@ -6797,13 +6771,6 @@ If not specified on update, the metadata object&#8217;s labels, creationTimestam
 <td class="tableblock halign-left valign-top"><p class="tableblock">True</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>JSON string indicating if this Storage Backend supports FlexClone.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>example: false</p>
-</li>
-</ul>
 </div></div></td>
 </tr>
 <tr>
@@ -6812,13 +6779,6 @@ If not specified on update, the metadata object&#8217;s labels, creationTimestam
 <td class="tableblock halign-left valign-top"><p class="tableblock">True</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>JSON string indicating if this Storage Backend supports SnapMirror.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>example: false</p>
-</li>
-</ul>
 </div></div></td>
 </tr>
 <tr>
@@ -6827,13 +6787,6 @@ If not specified on update, the metadata object&#8217;s labels, creationTimestam
 <td class="tableblock halign-left valign-top"><p class="tableblock">True</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>JSON string indicating if this Storage Backend supports s3.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>example: false</p>
-</li>
-</ul>
 </div></div></td>
 </tr>
 </tbody>
@@ -6877,6 +6830,9 @@ Defined values are:</p>
 <p>"certificate" - Uses certificate</p>
 </li>
 <li>
+<p>enum: ["basic", "certificate"]</p>
+</li>
+<li>
 <p>example: basic</p>
 </li>
 </ul>
@@ -6897,6 +6853,13 @@ Defined values are:</p>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>JSON array of JSON strings containing the list of all possible management IPs used to connect to this ONTAP cluster.
 This is used to correlate backends detected through Trident and storage backends in Astra.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>uniqueItems: 1</p>
+</li>
+</ul>
 </div></div></td>
 </tr>
 </tbody>

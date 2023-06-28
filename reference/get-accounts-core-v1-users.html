@@ -83,7 +83,7 @@
       head.appendChild(onetrustScript);
     }addConsent("72570c5c-fe30-465f-b0e0-b77f7fb4ae34");
     addAdobeLaunch("launch-e9ff3acac59f");
-    addGoogleAnalytics("UA-81697994-3");function OptanonWrapper() { }
+    addGoogleAnalytics("G-KYN6T440WN");function OptanonWrapper() { }
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
@@ -5567,7 +5567,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-05-31 15:08:48 +0000">05/31/2023</time>
+    <time datetime="2023-06-28 11:58:00 +0000">06/28/2023</time>
     
   
 
@@ -6393,9 +6393,6 @@ Defined values are:</p>
 <li>
 <p>"application/astra-user"</p>
 </li>
-<li>
-<p>example: application/astra-user</p>
-</li>
 </ul>
 </div></div></td>
 </tr>
@@ -6418,9 +6415,6 @@ Defined values are:</p>
 <li>
 <p>"1.2"</p>
 </li>
-<li>
-<p>example: 1.2</p>
-</li>
 </ul>
 </div></div></td>
 </tr>
@@ -6436,9 +6430,6 @@ Defined values are:</p>
 <ul>
 <li>
 <p>Conforms to the UUIDv4 Schema</p>
-</li>
-<li>
-<p>example: 5bad8e04-e2fd-5c43-98d7-300580993f49</p>
 </li>
 </ul>
 </div></div></td>
@@ -6468,9 +6459,6 @@ Defined values are:</p>
 <li>
 <p>"suspended" - The user account is suspended (The user cannot log in regardless of account "isEnabled" setting).</p>
 </li>
-<li>
-<p>example: active</p>
-</li>
 </ul>
 </div></div></td>
 </tr>
@@ -6490,9 +6478,6 @@ Defined values are:</p>
 <li>
 <p>"false" - The user is not allowed to log in.</p>
 </li>
-<li>
-<p>example: true</p>
-</li>
 </ul>
 </div></div></td>
 </tr>
@@ -6505,13 +6490,6 @@ Defined values are:</p>
 The contents of this string depend on the specified authProvider.
 For a user with "authProvider" as "local", "authID" is set to the value of "email".
 For a user with "authProvider" as "ldap", "authID" is set to its Distinguished Name (DN) from the LDAP server.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>example: HteLK3hk28sdbDLKHReB</p>
-</li>
-</ul>
 </div></div></td>
 </tr>
 <tr>
@@ -6535,9 +6513,6 @@ Defined values are:</p>
 In Astra Control Center, all users are required to have a value of "local", or "ldap". If a value is not specified, a default value of "local" is chosen.
 In Astra Control Service, "authProvider" as "local", or "ldap" is not supported. If a value is not specified, it will default to "cloud-central".</p>
 </li>
-<li>
-<p>example: cloud-central</p>
-</li>
 </ul>
 </div></div></td>
 </tr>
@@ -6559,9 +6534,6 @@ Defined values are:</p>
 </li>
 <li>
 <p>This string is internally validated to prevent XSS, Unicode, directory traversal, and SQL-injection attacks</p>
-</li>
-<li>
-<p>example: John</p>
 </li>
 </ul>
 </div></div></td>
@@ -6585,9 +6557,6 @@ Defined values are:</p>
 <li>
 <p>This string is internally validated to prevent XSS, Unicode, directory traversal, and SQL-injection attacks</p>
 </li>
-<li>
-<p>example: Doe</p>
-</li>
 </ul>
 </div></div></td>
 </tr>
@@ -6610,9 +6579,6 @@ Defined values are:</p>
 <li>
 <p>This string is internally validated to prevent XSS, Unicode, directory traversal, and SQL-injection attacks</p>
 </li>
-<li>
-<p>example: NetApp, Inc.</p>
-</li>
 </ul>
 </div></div></td>
 </tr>
@@ -6622,13 +6588,6 @@ Defined values are:</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">True</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>JSON strings containing a user-specified email address.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>example: <a href="mailto:jdoe@example.com">jdoe@example.com</a></p>
-</li>
-</ul>
 </div></div></td>
 </tr>
 <tr>
@@ -6637,13 +6596,6 @@ Defined values are:</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>JSON string containing the phone number of the user. If this key does not exist, it indicates that a phone number has not been provided.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>example: 408-555-22222</p>
-</li>
-</ul>
 </div></div></td>
 </tr>
 <tr>
@@ -6672,9 +6624,6 @@ Defined values are:</p>
 <p>"false" - A welcome email will not be sent
 For a user with "authProvider" as "local" or "ldap", this value is ignored and is set to "false".</p>
 </li>
-<li>
-<p>example: true</p>
-</li>
 </ul>
 </div></div></td>
 </tr>
@@ -6691,9 +6640,6 @@ Defined values are:</p>
 <li>
 <p>Conforms to the ISO-8601 Date Time Schema</p>
 </li>
-<li>
-<p>example: 2020-08-05T14:24:54.128427Z</p>
-</li>
 </ul>
 </div></div></td>
 </tr>
@@ -6709,9 +6655,6 @@ Defined values are:</p>
 <ul>
 <li>
 <p>Conforms to the ISO-8601 Date Time Schema</p>
-</li>
-<li>
-<p>example: 2020-08-05T14:24:54.128427Z</p>
 </li>
 </ul>
 </div></div></td>

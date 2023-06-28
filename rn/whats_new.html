@@ -83,7 +83,7 @@
       head.appendChild(onetrustScript);
     }addConsent("72570c5c-fe30-465f-b0e0-b77f7fb4ae34");
     addAdobeLaunch("launch-e9ff3acac59f");
-    addGoogleAnalytics("UA-81697994-3");function OptanonWrapper() { }
+    addGoogleAnalytics("G-KYN6T440WN");function OptanonWrapper() { }
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
@@ -5567,7 +5567,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-05-30 22:06:19 +0000">05/30/2023</time>
+    <time datetime="2023-06-28 11:54:25 +0000">06/28/2023</time>
     
   
 
@@ -5583,6 +5583,26 @@
 <div class="sectionbody">
 <div class="paragraph lead">
 <p>NetApp aggiorna regolarmente l&#8217;API REST di Astra Control per offrire nuove funzionalità, miglioramenti e correzioni di bug.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="27-giugno-2023-23-06">27 giugno 2023 (23.06)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Questa versione include aggiornamenti selettivi dell&#8217;API REST.</p>
+</div>
+<div class="sect2">
+<h3 id="azure-marketplace">Azure Marketplace</h3>
+<div class="paragraph">
+<p>Gli abbonamenti a Azure Marketplace vengono fatturati ora anziché al minuto. Vedere anche <a href="https://docs.netapp.com/us-en/astra-control-service/use/set-up-billing.html" target="_blank" rel="noopener">"Impostare la fatturazione"</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ottimizzazione-restic">Ottimizzazione Restic</h3>
+<div class="paragraph">
+<p>È possibile abilitare l&#8217;ottimizzazione delle performance per i backup dei resotici utilizzando il flag <code>useResticParallel</code> nel nuovo <code>astra.datamover</code> Risorsa API delle impostazioni. Quando è impostato su <code>true</code>, il numero di <code>backendConnections</code> Questo tipo di utilizzo è aumentato quando si esegue il backup di grandi volumi in un container Azure. Per volumi da 1 TB a 4 TB, vengono utilizzate 128 connessioni. Per volumi superiori a 4 TB, vengono utilizzate 512 connessioni back-end.</p>
+</div>
 </div>
 </div>
 </div>
