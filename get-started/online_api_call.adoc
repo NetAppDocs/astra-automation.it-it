@@ -24,7 +24,7 @@ Devi accedere ad Astra e alla pagina di riferimento API. Vedere link:../get-star
 . Copiare e incollare il valore del token API nel campo della finestra popup, fare clic su *autorizzare*, quindi fare clic su *Chiudi*.
 . Scorrere la pagina verso il basso e aprire la chiamata API desiderata.
 . Fare clic con il pulsante destro del mouse su *Provalo*.
-. Scorrere verso il basso all'interno della stessa chiamata API e fare clic su *Execute* (Esegui).
+. Scorrere verso il basso all'interno della stessa chiamata API. Fornire i valori dei parametri richiesti e fare clic su *Execute* (Esegui) per effettuare la chiamata.
 
 
 .Risultato

@@ -1193,7 +1193,6 @@
   <block id="f1fca9fdba2865f1e5e68171f8e501c8" category="list-text">Copiare e incollare il valore del token API nel campo della finestra popup, fare clic su *autorizzare*, quindi fare clic su *Chiudi*.</block>
   <block id="d77956bf312c489126fb210ac26e1560" category="list-text">Scorrere la pagina verso il basso e aprire la chiamata API desiderata.</block>
   <block id="640c9068a50bdac21a3ada93c538c020" category="list-text">Fare clic con il pulsante destro del mouse su *Provalo*.</block>
-  <block id="faa896405f051eeeb846ead40d365dcf" category="list-text">Scorrere verso il basso all'interno della stessa chiamata API e fare clic su *Execute* (Esegui).</block>
   <block id="8eea62084ca7e541d918e823422bd82e" category="paragraph-title">Risultato</block>
   <block id="5a698356ed60cc238c0048ecf6f15037" category="paragraph">La chiamata API viene eseguita e viene visualizzato il codice di stato HTTP.</block>
   <block id="e90840c9e835dabec4f6627d0ccddef2" category="paragraph">Sono necessarie le credenziali per accedere all'interfaccia utente Web Astra per la distribuzione. La procedura per accedere alla documentazione di riferimento è la stessa per Astra Control Service e Astra Control Center. Solo l'URL è diverso. Non è necessario un token API per accedere e visualizzare il documento di riferimento.</block>
@@ -1235,4 +1234,5 @@
   <block id="3987948e759f27889fb63521255c084f" category="inline-link">Documentazione di Astra Control Service 23.06</block>
   <block id="8de8be2639041c77c0c0e3c2870c7446" category="list-text"><block ref="8de8be2639041c77c0c0e3c2870c7446" category="inline-link-rx"></block></block>
   <block id="529552afdc21e1a01b8e807df92fe719" category="admonition">Non ci sono nuovi problemi noti con la release 23.06 dell'API REST di Astra Control. Tutti i problemi descritti di seguito sono stati rilevati nelle release precedenti e sono ancora applicabili alla release corrente.</block>
+  <block id="db21e6fd52879394e8294f15387580ad" category="list-text">Scorrere verso il basso all'interno della stessa chiamata API. Fornire i valori dei parametri richiesti e fare clic su *Execute* (Esegui) per effettuare la chiamata.</block>
 </blocks>
