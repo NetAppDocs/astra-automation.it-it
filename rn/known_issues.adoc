@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: rn/known_issues.html 
 keywords: known issues, issues, bugs, fixes 
-summary: 'Si consiglia di esaminare tutti i problemi noti relativi alla release corrente relativi all"API REST di Astra Control. I problemi noti identificano i problemi che potrebbero impedire il corretto utilizzo del prodotto.' 
+summary: Dovresti esaminare tutti i problemi noti della release corrente di Astra Control e le API REST associate. I problemi noti identificano i problemi che potrebbero impedire il corretto utilizzo del prodotto. 
 ---
 = Problemi noti
 :hardbreaks:
@@ -14,12 +14,7 @@ summary: 'Si consiglia di esaminare tutti i problemi noti relativi alla release 
 
 
 [role="lead"]
-Si consiglia di esaminare tutti i problemi noti relativi alla release corrente relativi all'API REST di Astra Control. I problemi noti identificano i problemi che potrebbero impedire il corretto utilizzo del prodotto.
-
-
-NOTE: Non ci sono nuovi problemi noti con la release 23.06 dell'API REST di Astra Control. Tutti i problemi descritti di seguito sono stati rilevati nelle release precedenti e sono ancora applicabili alla release corrente.
-
-Consulta una delle seguenti pagine in base al modello di implementazione.
+Dovresti esaminare tutti i problemi noti della release corrente di Astra Control e le API REST associate. I problemi noti identificano i problemi che potrebbero impedire il corretto utilizzo del prodotto. Consultare una delle seguenti pagine in base al modello di distribuzione utilizzato:
 
 * https://docs.netapp.com/us-en/astra-control-service/release-notes/known-issues.html["Problemi noti per Astra Control Service"^]
 * https://docs.netapp.com/us-en/astra-control-center/release-notes/known-issues.html["Problemi noti per Astra Control Center"^]
