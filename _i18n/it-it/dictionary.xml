@@ -872,7 +872,6 @@
   <block id="f42562a6ae551c35216254ce200afcc8" category="cell">Origine gancio</block>
   <block id="fba14cda608976c44a49d623666f37c7" category="cell">Le risorse di origine hook rappresentano il codice di origine effettivo utilizzato con un gancio di esecuzione. La separazione del codice sorgente dal controllo di esecuzione offre diversi vantaggi, ad esempio la possibilità di condividere gli script.</block>
   <block id="f156c7862a93e81ca10ba4bc4349824d" category="cell">Gruppo LDAP</block>
-  <block id="dc488877c36bb584e674e32f8b4e1de4" category="cell">*22.11*</block>
   <block id="8a958fceac1f74e78832d8498767ce1f" category="cell">È possibile elencare i gruppi all'interno del server LDAP configurato. L'accesso ai gruppi LDAP è di sola lettura.</block>
   <block id="30b31a74662fc368bd562efd0f43adc2" category="cell">Utente LDAP</block>
   <block id="0d0a6d61fee1311a1ba8a542e2bb5623" category="cell">È possibile elencare gli utenti all'interno del server LDAP configurato. L'accesso agli utenti LDAP è di sola lettura.</block>
@@ -1139,8 +1138,6 @@
   <block id="9a5f09cf66e692efdae493ce4c9aa64f" category="sidebar">Preparazione</block>
   <block id="a7f5f35426b927411fc9231b56382173" category="sidebar">Python</block>
   <block id="ea1c0b8e4018f75659e26eb720b206e5" category="sidebar">Utilizzare Python in modo nativo</block>
-  <block id="f21f22dde0e0692333a7a28cce456b08" category="sidebar">Tutta la documentazione Astra</block>
-  <block id="c216e952dc373af46e9e31e0b8bdcf89" category="sidebar">Automazione Astra</block>
   <block id="365c8dec8255a8a164436c71a2611920" category="sidebar">Utilizzo di Python</block>
   <block id="35bcd8d33247c44923eb71df2f2f0a2d" category="sidebar">Python nativo</block>
   <block id="b0df0cbb0d80fcf4a587effd8b8f3f6a" category="sidebar">Configurare il server LDAP</block>
@@ -1223,12 +1220,6 @@
   <block id="e6ae92bcba1e3a36ef0b12b0f1ed5c53" category="section-title">Nuovo tipo di gancio di esecuzione</block>
   <block id="00b87f63b5ab2f631053ae22c2cbadbd" category="paragraph">Il nuovo tipo di gancio di esecuzione *post-failover* è disponibile con Astra Control Center.</block>
   <block id="809951d75a5959408aaef7facffe73f1" category="admonition">Ad ogni release di Astra Control viene assegnato un numero di versione del modulo *YY.MM*. Questo valore indica la versione in base all'anno (_YY_) e al mese (_MM_) in cui è diventata disponibile. Ad esempio, Astra Control Center 23.07 è stato rilasciato nel luglio 2023.</block>
-  <block id="685fab4e0f4afbe567f9410e426cf33b" category="list-text">Servizio di controllo Astra 23.07</block>
-  <block id="20e97def7e9adb5021f4a28abe844ccf" category="list-text">Centro di controllo Astra 23.07</block>
-  <block id="51ec83fd81ce58f9ea70187b74727aff" category="inline-link">Documentazione di Astra Control Center 23.07</block>
-  <block id="b2ea0c38a745c6bfb4298aecb931d130" category="list-text"><block ref="b2ea0c38a745c6bfb4298aecb931d130" category="inline-link-rx"></block></block>
-  <block id="88f3464f5e943dd845d3ca23235e5791" category="inline-link">Documentazione di Astra Control Service 23.07</block>
-  <block id="119edfca8dd05a2365b25f221a07fa7d" category="list-text"><block ref="119edfca8dd05a2365b25f221a07fa7d" category="inline-link-rx"></block></block>
   <block id="43a62b176f718092748cfb8e6a9afa19" category="inline-link">Documentazione di Astra Control Automation 23.04</block>
   <block id="da054b04f4f9b4f05d91fce1501f15ef" category="list-text"><block ref="da054b04f4f9b4f05d91fce1501f15ef" category="inline-link-rx"></block></block>
   <block id="52009bb7ee17227f566cd26a02caee56" category="inline-link-macro"><block ref="52009bb7ee17227f566cd26a02caee56" category="inline-link-rx"></block></block>
@@ -1252,4 +1243,25 @@
   <block id="4beba69037bd14812e726a2a137a8c7f" category="sidebar">Design del SUPPORTO centrale</block>
   <block id="43659ebbefa72dddc0bf81f83ff3645d" category="sidebar">Riepilogo delle risorse</block>
   <block id="f8de52ebe15fa6f74d720087c5ea48fb" category="sidebar">Design centrale</block>
+  <block id="b2753ac117117258ce5ba22aebd3a8a8" category="cell">22,1</block>
+  <block id="c4340906de504057557c6bb8611b0ab5" category="cell">22,11</block>
+  <block id="ed5dea09095f671b801bee34ea28a319" category="cell">Permesso</block>
+  <block id="5a31da03b445627c9d11d99efb7cc803" category="cell">23,06</block>
+  <block id="22a15af82a20adf60996d549baa48d24" category="cell">Le risorse di autorizzazione rappresentano le autorizzazioni correlate alle operazioni all'interno del sistema. L'API fornisce l'accesso di sola lettura alle autorizzazioni.</block>
+  <block id="8fe5430b97accfa7b33d3c5887f90718" category="cell">Le risorse del ruolo rappresentano i ruoli disponibili nel sistema. L'API fornisce l'accesso di sola lettura ai ruoli.</block>
+  <block id="6881779f2ae76c74d15a56eaefcccd8b" category="section-title">7 novembre 2023 (23,10)</block>
+  <block id="c5f7bfd0f88ba662f205c76fa84795d3" category="paragraph">Sia Astra Control Service che Astra Control Center sono stati aggiornati con la release 23,10. Sono stati apportati miglioramenti selettivi all'API REST per supportare le nuove funzionalità.</block>
+  <block id="59c699c319c0ae768cb1a82b07028dff" category="paragraph">Puoi attivare operazioni di backup e ripristino per<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block> backend di storage.</block>
+  <block id="615193f2c37d9fd054a61bf78b73ad01" category="section-title">Backup immutabili</block>
+  <block id="621ca655e0daef2645ca8111b3c531cc" category="paragraph">Astra Control ora supporta backup di sola lettura non alterabili come livello di sicurezza aggiuntivo contro malware e altre minacce.</block>
+  <block id="74e32fa10752727786230542db6f5350" category="section-title">Controllo avanzato sui ganci di esecuzione</block>
+  <block id="2f2999f047197765442c0c74117bb5be" category="paragraph">A partire da questa versione, la funzionalità dei ganci di esecuzione può essere attivata o disattivata per maggiore sicurezza (è disattivata per impostazione predefinita). Se non sono ancora stati creati ganci di esecuzione da utilizzare con Astra Control, è necessario abilitare la funzione di hook di esecuzione per iniziare a creare hook. Se sono stati creati dei ganci di esecuzione prima di questa release, la funzionalità dei ganci di esecuzione rimane attivata ed è possibile utilizzare i ganci normalmente.</block>
+  <block id="64d97a20d86a4938bc2f0ca6487991bf" category="list-text">Servizio Astra Control 23,10</block>
+  <block id="4646da7b1b74b708dde12727beab50a2" category="list-text">Astra Control Center 23,10</block>
+  <block id="fa73c4158a31e3bf65319a4cd45bd936" category="inline-link">Documentazione di Astra Control Center 23,10</block>
+  <block id="5dcdce741516a1f5d54bd302aa84737e" category="list-text"><block ref="5dcdce741516a1f5d54bd302aa84737e" category="inline-link-rx"></block></block>
+  <block id="7d2e6602b95dd5d4d056964dea6dea4c" category="inline-link">Documentazione di Astra Control Service 23,10</block>
+  <block id="5ef5b3f51e13355494fcdf46ca82fde4" category="list-text"><block ref="5ef5b3f51e13355494fcdf46ca82fde4" category="inline-link-rx"></block></block>
+  <block id="319cbcbe823e54bc4431c0aeca14c9d6" category="inline-link">Documentazione di Astra Control Automation 23,07</block>
+  <block id="bff628185da3389d42f4449fd249480c" category="list-text"><block ref="bff628185da3389d42f4449fd249480c" category="inline-link-rx"></block></block>
 </blocks>

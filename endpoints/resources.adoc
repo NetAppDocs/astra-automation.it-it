@@ -68,10 +68,10 @@ Gli endpoint principali delle risorse forniscono i servizi di base necessari per
 | Origine gancio | 21.12 | Le risorse di origine hook rappresentano il codice di origine effettivo utilizzato con un gancio di esecuzione. La separazione del codice sorgente dal controllo di esecuzione offre diversi vantaggi, ad esempio la possibilità di condividere gli script. 
 
 
-| Gruppo LDAP | *22.11* | È possibile elencare i gruppi all'interno del server LDAP configurato. L'accesso ai gruppi LDAP è di sola lettura. 
+| Gruppo LDAP | 22,1 | È possibile elencare i gruppi all'interno del server LDAP configurato. L'accesso ai gruppi LDAP è di sola lettura. 
 
 
-| Utente LDAP | *22.11* | È possibile elencare gli utenti all'interno del server LDAP configurato. L'accesso agli utenti LDAP è di sola lettura. 
+| Utente LDAP | 22,11 | È possibile elencare gli utenti all'interno del server LDAP configurato. L'accesso agli utenti LDAP è di sola lettura. 
 
 
 | Licenza | 21.08 | Le risorse di licenza rappresentano le licenze disponibili per un account Astra. 
@@ -83,6 +83,12 @@ Gli endpoint principali delle risorse forniscono i servizi di base necessari per
 | Pacchetto | 22.04 | Le risorse del pacchetto forniscono la registrazione e l'accesso alle definizioni dei pacchetti. I pacchetti software sono composti da vari componenti, tra cui file, immagini e altri elementi. 
 
 
+| Permesso | 23,06 | Le risorse di autorizzazione rappresentano le autorizzazioni correlate alle operazioni all'interno del sistema. L'API fornisce l'accesso di sola lettura alle autorizzazioni. 
+
+
+| Ruolo | 23,06 | Le risorse del ruolo rappresentano i ruoli disponibili nel sistema. L'API fornisce l'accesso di sola lettura ai ruoli. 
+
+
 | Binding dei ruoli | 21.04 | Le risorse di associazione dei ruoli rappresentano le relazioni tra coppie specifiche di utenti e account. Oltre al collegamento tra i due, viene specificato un set di autorizzazioni per ciascuno attraverso un ruolo specifico. 
 
 
@@ -92,7 +98,7 @@ Gli endpoint principali delle risorse forniscono i servizi di base necessari per
 | Iscrizione | 21.08 | Le risorse di abbonamento rappresentano gli abbonamenti attivi per un account Astra. 
 
 
-| Attività | *22.11* | Le risorse delle attività forniscono l'accesso in sola lettura alle attività gestite e possono essere utilizzate per visualizzare lo stato delle attività interne a esecuzione prolungata. 
+| Attività | 22,11 | Le risorse delle attività forniscono l'accesso in sola lettura alle attività gestite e possono essere utilizzate per visualizzare lo stato delle attività interne a esecuzione prolungata. 
 
 
 | Token | 21.04 | Le risorse token rappresentano i token disponibili per accedere a livello di programmazione all'API REST di Astra Control. 
@@ -142,7 +148,7 @@ Gli endpoint delle risorse di topologia forniscono l'accesso alle applicazioni n
 | Risorsa | Rilasciare | Descrizione 
 
 
-| Risorsa API | *22.11* | Gli endpoint delle risorse API forniscono accesso in sola lettura alle risorse Kubernetes in uno specifico cluster gestito. 
+| Risorsa API | 22,11 | Gli endpoint delle risorse API forniscono accesso in sola lettura alle risorse Kubernetes in uno specifico cluster gestito. 
 
 
 | App | 21.04 | Le risorse applicative rappresentano tutte le applicazioni Kubernetes, incluse quelle non gestite da Astra. 

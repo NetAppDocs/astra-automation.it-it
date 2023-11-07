@@ -25,8 +25,8 @@ In genere, gli aggiornamenti a Astra Control Service e Astra Control Center veng
 .Implementazioni di Astra Control
 La documentazione di questo sito si applica alle seguenti release di Astra Control:
 
-* Servizio di controllo Astra 23.07
-* Centro di controllo Astra 23.07
+* Servizio Astra Control 23,10
+* Astra Control Center 23,10
 
 
 Poiché questo sito documenta l'API REST per entrambi i modelli di distribuzione, alcune funzionalità potrebbero essere disponibili solo con un modello di distribuzione o l'altro. Eventuali differenze significative tra i due sono notate come necessario.
@@ -36,8 +36,8 @@ Per ulteriori informazioni sulle versioni attuali e precedenti di Astra Control,
 
 * link:../rn/whats_new.html["Novità dell'API REST di Astra Control"]
 * link:../endpoints/resources.html["Risorse REST ed endpoint"]
-* https://docs.netapp.com/us-en/astra-control-center/["Documentazione di Astra Control Center 23.07"^]
-* https://docs.netapp.com/us-en/astra-control-service/["Documentazione di Astra Control Service 23.07"^]
+* https://docs.netapp.com/us-en/astra-control-center/["Documentazione di Astra Control Center 23,10"^]
+* https://docs.netapp.com/us-en/astra-control-service/["Documentazione di Astra Control Service 23,10"^]
 * link:../rn/earlier-versions.html["Versioni precedenti della documentazione di Astra Automation"]
 
 

@@ -18,6 +18,30 @@ NetApp aggiorna regolarmente l'API REST di Astra Control per offrire nuove funzi
 
 
 
+== 7 novembre 2023 (23,10)
+
+Sia Astra Control Service che Astra Control Center sono stati aggiornati con la release 23,10. Sono stati apportati miglioramenti selettivi all'API REST per supportare le nuove funzionalità.
+
+
+
+=== Backend storage estesi
+
+Puoi attivare operazioni di backup e ripristino per `ontap-nas-economy` backend di storage.
+
+
+
+=== Backup immutabili
+
+Astra Control ora supporta backup di sola lettura non alterabili come livello di sicurezza aggiuntivo contro malware e altre minacce.
+
+
+
+=== Controllo avanzato sui ganci di esecuzione
+
+A partire da questa versione, la funzionalità dei ganci di esecuzione può essere attivata o disattivata per maggiore sicurezza (è disattivata per impostazione predefinita). Se non sono ancora stati creati ganci di esecuzione da utilizzare con Astra Control, è necessario abilitare la funzione di hook di esecuzione per iniziare a creare hook. Se sono stati creati dei ganci di esecuzione prima di questa release, la funzionalità dei ganci di esecuzione rimane attivata ed è possibile utilizzare i ganci normalmente.
+
+
+
 == 27 luglio 2023 (23.07)
 
 Questa release include miglioramenti selettivi all'API REST. Sia Astra Control Service che Astra Control Center sono stati aggiornati con la release 23.07.
