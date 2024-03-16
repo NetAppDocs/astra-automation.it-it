@@ -1131,13 +1131,6 @@
   <block id="93168a8084b3e838d2932c4734bd234e" category="sidebar">Versioni precedenti</block>
   <block id="be11c74c1dd7f307bb80183a90dc2067" category="sidebar">Inizia subito</block>
   <block id="3b878279a04dc47d60932cb294d96259" category="sidebar">Panoramica</block>
-  <block id="547abae9d6ca9df339ec4543e220ab8e" category="sidebar">Prima chiamata API</block>
-  <block id="b4ec6b7393a41bf5e5870f1ce48009e5" category="sidebar">Risorse E raccolte REST</block>
-  <block id="f38713c0367843938a57ef219a3bfbfc" category="sidebar">Riepilogo delle risorse API di Astra</block>
-  <block id="e6b088db24ebe67ed0e9567d309387ec" category="sidebar">Flussi di lavoro</block>
-  <block id="9a5f09cf66e692efdae493ce4c9aa64f" category="sidebar">Preparazione</block>
-  <block id="a7f5f35426b927411fc9231b56382173" category="sidebar">Python</block>
-  <block id="ea1c0b8e4018f75659e26eb720b206e5" category="sidebar">Utilizzare Python in modo nativo</block>
   <block id="365c8dec8255a8a164436c71a2611920" category="sidebar">Utilizzo di Python</block>
   <block id="35bcd8d33247c44923eb71df2f2f0a2d" category="sidebar">Python nativo</block>
   <block id="b0df0cbb0d80fcf4a587effd8b8f3f6a" category="sidebar">Configurare il server LDAP</block>
@@ -1219,7 +1212,6 @@
   <block id="1d64e26fe87f8846d60010aa3270a37f" category="list-text"><block ref="1752f949f63eb1f41cea70be24a2a732" category="inline-link-rx"></block> 1.5.0 e versioni successive</block>
   <block id="e6ae92bcba1e3a36ef0b12b0f1ed5c53" category="section-title">Nuovo tipo di gancio di esecuzione</block>
   <block id="00b87f63b5ab2f631053ae22c2cbadbd" category="paragraph">Il nuovo tipo di gancio di esecuzione *post-failover* è disponibile con Astra Control Center.</block>
-  <block id="809951d75a5959408aaef7facffe73f1" category="admonition">Ad ogni release di Astra Control viene assegnato un numero di versione del modulo *YY.MM*. Questo valore indica la versione in base all'anno (_YY_) e al mese (_MM_) in cui è diventata disponibile. Ad esempio, Astra Control Center 23.07 è stato rilasciato nel luglio 2023.</block>
   <block id="43a62b176f718092748cfb8e6a9afa19" category="inline-link">Documentazione di Astra Control Automation 23.04</block>
   <block id="da054b04f4f9b4f05d91fce1501f15ef" category="list-text"><block ref="da054b04f4f9b4f05d91fce1501f15ef" category="inline-link-rx"></block></block>
   <block id="52009bb7ee17227f566cd26a02caee56" category="inline-link-macro"><block ref="52009bb7ee17227f566cd26a02caee56" category="inline-link-rx"></block></block>
@@ -1234,13 +1226,11 @@
   <block id="f3cc9a8807405c26d51d9df37d490dd7" category="list-text">Servizio di controllo Astra:<block ref="0045c0d6f22ad59c53fc1e6d3b91c771" category="inline-link-rx"></block></block>
   <block id="4bdd2ccefb2f03cc6285395d8c1ae399" category="summary">La documentazione di questo sito descrive l'API REST Astra Control e le tecnologie di automazione correlate incluse nei due modelli di implementazione Astra Control.</block>
   <block id="f61369f881218faa68ada1128b5d5854" category="paragraph-title">Versione della release</block>
-  <block id="0dde93985fcf355fdbe3950194c0dd60" category="paragraph">In genere, gli aggiornamenti a Astra Control Service e Astra Control Center vengono eseguiti contemporaneamente. Tuttavia, in passato Astra Control Service aveva una cadenza più rapida per le release. Questo ha portato a uno o più aggiornamenti incrementali oltre la versione più recente di Astra Control Center.</block>
   <block id="80eee0325102cbbe5624dd825f288da6" category="paragraph">Poiché questo sito documenta l'API REST per entrambi i modelli di distribuzione, alcune funzionalità potrebbero essere disponibili solo con un modello di distribuzione o l'altro. Eventuali differenze significative tra i due sono notate come necessario.</block>
   <block id="d33e3df86964bc9c994984b08fd48e76" category="list-text"><block ref="d33e3df86964bc9c994984b08fd48e76" category="inline-link-macro-rx"></block></block>
   <block id="5ef64ef4145885449a36757ad3925285" category="summary">Dovresti esaminare tutti i problemi noti della release corrente di Astra Control e le API REST associate. I problemi noti identificano i problemi che potrebbero impedire il corretto utilizzo del prodotto.</block>
   <block id="0158322c4aa7f21160a8bc5298e211b1" category="paragraph">Dovresti esaminare tutti i problemi noti della release corrente di Astra Control e le API REST associate. I problemi noti identificano i problemi che potrebbero impedire il corretto utilizzo del prodotto. Consultare una delle seguenti pagine in base al modello di distribuzione utilizzato:</block>
   <block id="90a5fcdce1500ecacc854f6c87061ce9" category="sidebar">Implementazione REST di Astra</block>
-  <block id="4beba69037bd14812e726a2a137a8c7f" category="sidebar">Design del SUPPORTO centrale</block>
   <block id="43659ebbefa72dddc0bf81f83ff3645d" category="sidebar">Riepilogo delle risorse</block>
   <block id="f8de52ebe15fa6f74d720087c5ea48fb" category="sidebar">Design centrale</block>
   <block id="b2753ac117117258ce5ba22aebd3a8a8" category="cell">22,1</block>
@@ -1256,12 +1246,22 @@
   <block id="621ca655e0daef2645ca8111b3c531cc" category="paragraph">Astra Control ora supporta backup di sola lettura non alterabili come livello di sicurezza aggiuntivo contro malware e altre minacce.</block>
   <block id="74e32fa10752727786230542db6f5350" category="section-title">Controllo avanzato sui ganci di esecuzione</block>
   <block id="2f2999f047197765442c0c74117bb5be" category="paragraph">A partire da questa versione, la funzionalità dei ganci di esecuzione può essere attivata o disattivata per maggiore sicurezza (è disattivata per impostazione predefinita). Se non sono ancora stati creati ganci di esecuzione da utilizzare con Astra Control, è necessario abilitare la funzione di hook di esecuzione per iniziare a creare hook. Se sono stati creati dei ganci di esecuzione prima di questa release, la funzionalità dei ganci di esecuzione rimane attivata ed è possibile utilizzare i ganci normalmente.</block>
-  <block id="64d97a20d86a4938bc2f0ca6487991bf" category="list-text">Servizio Astra Control 23,10</block>
-  <block id="4646da7b1b74b708dde12727beab50a2" category="list-text">Astra Control Center 23,10</block>
-  <block id="fa73c4158a31e3bf65319a4cd45bd936" category="inline-link">Documentazione di Astra Control Center 23,10</block>
-  <block id="5dcdce741516a1f5d54bd302aa84737e" category="list-text"><block ref="5dcdce741516a1f5d54bd302aa84737e" category="inline-link-rx"></block></block>
-  <block id="7d2e6602b95dd5d4d056964dea6dea4c" category="inline-link">Documentazione di Astra Control Service 23,10</block>
-  <block id="5ef5b3f51e13355494fcdf46ca82fde4" category="list-text"><block ref="5ef5b3f51e13355494fcdf46ca82fde4" category="inline-link-rx"></block></block>
   <block id="319cbcbe823e54bc4431c0aeca14c9d6" category="inline-link">Documentazione di Astra Control Automation 23,07</block>
   <block id="bff628185da3389d42f4449fd249480c" category="list-text"><block ref="bff628185da3389d42f4449fd249480c" category="inline-link-rx"></block></block>
+  <block id="8053414eb52e1996818bee3317a4c80b" category="section-title">14 marzo 2024 (24,02)</block>
+  <block id="a5f2459676ba50b9da6c058ccbd5bc76" category="paragraph">Sia Astra Control Service che Astra Control Center sono stati aggiornati con la release 24,02.</block>
+  <block id="35255425bea0e5bb9b43d5c6806d0df8" category="section-title">Correzioni di bug minori</block>
+  <block id="39424c31b4c5741354b6ec5bfd9f110e" category="paragraph">La release 24,02 si concentra principalmente sulla correzione di un certo numero di bug minori. Non sono stati aggiunti nuovi tipi di risorse all'API Astra Control.</block>
+  <block id="88273195e6bf6e2b8a0e13648e5047ae" category="section-title">Anteprima tecnica: Flussi di lavoro Kubernetes dichiarativi</block>
+  <block id="830f012ca90773e40cbe1216d249795b" category="paragraph">Astra Control Center 24,02 include una funzionalità dichiarativa di Kubernetes che consente di eseguire la gestione dei dati da una risorsa personalizzata (CR) di Kubernetes nativa. Questa funzione non è ancora generalmente disponibile. Vedere<block ref="b0515e8b7b46d83fe943d8f3ca4602ba" category="inline-link-rx"></block> per ulteriori informazioni, se necessario.</block>
+  <block id="5b6906a11af67ab437cebb35ce37666a" category="paragraph">Ad ogni release di Astra Control viene assegnato un numero di versione del modulo *YY.MM*. Come regola generale, questo valore identifica la versione Astra in base all'anno (_YY_) e al mese (_MM_) che divenne disponibile. Ad esempio, Astra Control Center 23.07 è stato rilasciato nel luglio 2023.</block>
+  <block id="60da41e76ad106913eecb1da9106bd42" category="paragraph">In genere, gli aggiornamenti a Astra Control Service e Astra Control Center vengono eseguiti contemporaneamente. Tuttavia, in passato, Astra Control Service ha accelerato la cadenza delle release. Ciò ha determinato uno o più aggiornamenti incrementali tra le principali release di Astra Control Center.</block>
+  <block id="ee4417330da16f81921d54a408aae37b" category="list-text">Servizio Astra Control 24,02</block>
+  <block id="984b3f2546572ca2b1fd8de4013c1882" category="list-text">Astra Control Center 24,02</block>
+  <block id="5ab109fbab91ad9ade1835c318286e64" category="inline-link">Documentazione di Astra Control Center 24,02</block>
+  <block id="9ec89e483777b281c0d114e1ed0c8c8f" category="list-text"><block ref="9ec89e483777b281c0d114e1ed0c8c8f" category="inline-link-rx"></block></block>
+  <block id="ee89a8c8a8c4124e1c47b50f7d6c8420" category="inline-link">Documentazione di Astra Control Service 24,02</block>
+  <block id="ad688d9042062312f59460f99f7f7881" category="list-text"><block ref="ad688d9042062312f59460f99f7f7881" category="inline-link-rx"></block></block>
+  <block id="2ce5679e796a226301682da2e8eb77f6" category="inline-link">Documentazione di Astra Control Automation 23,10</block>
+  <block id="b59949e755b5f42564828ce536cb3b96" category="list-text"><block ref="b59949e755b5f42564828ce536cb3b96" category="inline-link-rx"></block></block>
 </blocks>
