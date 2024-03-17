@@ -835,7 +835,6 @@
   <block id="6cb8b958a36383ed1b7bacc626d0a5dd" category="paragraph-title">Stato della risorsa</block>
   <block id="b7aa38141b9dd3f7e78cd09e7f60ce0c" category="paragraph">Risorse selezionate a<block ref="9ed39e2ea931586b6a985a6942ef573e" prefix=" " category="inline-code"></block> valore utilizzato per orchestrare le transizioni del ciclo di vita e controllare l'accesso.</block>
   <block id="b844ee2db8fd78557f753d0c04015c4a" category="summary">Astra Control è un prodotto software NetApp che fornisce la gestione del ciclo di vita dei dati per le applicazioni Kubernetes. A seconda dell'ambiente in uso, sono disponibili due modelli di implementazione. Sia Astra Control Center che Astra Control Service condividono la stessa API REST a seconda della release. È possibile utilizzare l'API REST e altre tecnologie di automazione correlate per gestire le implementazioni di Astra Control.</block>
-  <block id="1a0ca7f0a5aea880c24d544b4655d6ed" category="doc">Documentazione di Astra Control Automation</block>
   <block id="d803102aaa79040d7acdf0fdfaf7f156" category="summary">È possibile accedere alle risorse fornite tramite l'API REST di Astra Control per automatizzare un'implementazione Astra. Ogni risorsa è disponibile attraverso uno o più endpoint. In questa pagina viene fornita un'introduzione alle risorse REST che è possibile utilizzare come parte di un'implementazione dell'automazione.</block>
   <block id="599887dba3179dd0daaa4b5d587aa0a0" category="doc">Risorse ed endpoint</block>
   <block id="2cb4d33cb32e61ac40dcce4208d54e3c" category="paragraph">È possibile accedere alle risorse fornite tramite l'API REST di Astra Control per automatizzare un'implementazione Astra. Ogni risorsa è disponibile attraverso uno o più endpoint. Di seguito viene fornita un'introduzione alle risorse REST che è possibile utilizzare come parte di un'implementazione dell'automazione.</block>
@@ -1264,4 +1263,5 @@
   <block id="ad688d9042062312f59460f99f7f7881" category="list-text"><block ref="ad688d9042062312f59460f99f7f7881" category="inline-link-rx"></block></block>
   <block id="2ce5679e796a226301682da2e8eb77f6" category="inline-link">Documentazione di Astra Control Automation 23,10</block>
   <block id="b59949e755b5f42564828ce536cb3b96" category="list-text"><block ref="b59949e755b5f42564828ce536cb3b96" category="inline-link-rx"></block></block>
+  <block id="0b11ef934b0c996ff94917743f4e7c1c" category="doc">Documentazione di Astra Control Automation 24,02</block>
 </blocks>
