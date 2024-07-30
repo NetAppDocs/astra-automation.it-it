@@ -18,21 +18,24 @@ summary: 'È possibile ripristinare un"applicazione creando una nuova applicazio
 
 
 
-=== 1. Selezionare l'applicazione da ripristinare
+== Passaggio 1: Selezionare l'applicazione da ripristinare
 
 Eseguire il flusso di lavoro link:wf_list_man_apps.html["Elencare le applicazioni"] e selezionare l'applicazione che si desidera clonare. Per la chiamata DI PAUSA utilizzata per ripristinare l'applicazione sono necessari diversi valori di risorse.
 
 
 
-=== 2. Selezionare il backup da utilizzare
+== Passaggio 2: Selezionare il backup da utilizzare
 
 Eseguire il flusso di lavoro link:wf_list_backups.html["Elencare i backup"] e selezionare il backup che si desidera utilizzare.
 
 
 
-=== 3. Ripristinare l'applicazione
+== Passaggio 3: Ripristinare l'app
 
 Eseguire la seguente chiamata API REST. È necessario fornire l'ID per un backup (come mostrato di seguito) o uno snapshot.
+
+.Metodo HTTP ed endpoint
+Questa chiamata API REST utilizza il metodo e l'endpoint seguenti.
 
 [cols="25,75"]
 |===
@@ -41,10 +44,7 @@ Eseguire la seguente chiamata API REST. È necessario fornire l'ID per un backup
 
 | IN PRIMO PIANO | /accounts/{account_id}/k8s/v2/apps/{app_id} 
 |===
-
-
-===== Parametri di input aggiuntivi
-
+.Parametri di input aggiuntivi
 Oltre ai parametri comuni a tutte le chiamate API REST, negli esempi di curl vengono utilizzati anche i seguenti parametri.
 
 [cols="25,10,10,55"]
@@ -54,10 +54,19 @@ Oltre ai parametri comuni a tutte le chiamate API REST, negli esempi di curl ven
 
 | JSON | Corpo | Sì | Fornisce i parametri per l'applicazione clonata. Vedere l'esempio riportato di seguito. 
 |===
-
-
-===== Esempio di input JSON
-
+.Esempio di curl: Ripristinare un'applicazione in uso da un backup
+[source, curl]
+----
+curl --request PUT \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/k8s/v2/apps/$APP_ID" \
+--include \
+--header "Content-Type: application/astra-app+json" \
+--header "ForceUpdate: true" \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data @JSONinput
+----
+.Esempio di input JSON
 [source, json]
 ----
 {
@@ -65,12 +74,4 @@ Oltre ai parametri comuni a tutte le chiamate API REST, negli esempi di curl ven
   "version": "2.0",
   "backupID": "e24515bd-a28e-4b28-b832-f3c74dbf32fb"
 }
-----
-
-
-===== Esempio di curl: Ripristinare un'applicazione in uso da un backup
-
-[source, curl]
-----
-curl --location -i --request PUT 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v2/apps/<APP_ID>' --header 'Content-Type: application/astra-app+json' --header '*/*' --header 'ForceUpdate: true' --header 'Authorization: Bearer <API_TOKEN>' --data @JSONinput
 ----

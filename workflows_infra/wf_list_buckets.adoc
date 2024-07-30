@@ -16,11 +16,10 @@ summary: È possibile elencare i bucket S3 definiti per un account Astra specifi
 [role="lead"]
 È possibile elencare i bucket S3 definiti per un account Astra specifico.
 
-
-
-=== 1. Elencare i bucket
-
 Eseguire la seguente chiamata API REST per elencare i bucket.
+
+.Metodo HTTP ed endpoint
+Questa chiamata API REST utilizza il metodo e l'endpoint seguenti.
 
 [cols="25,75"]
 |===
@@ -29,11 +28,12 @@ Eseguire la seguente chiamata API REST per elencare i bucket.
 
 | OTTIENI | /accounts/{account_id}/topology/v1/bucket 
 |===
-
-
-===== Esempio di curl: Restituisce tutti i dati per tutti i bucket
-
+.Esempio di curl: Restituisce tutti i dati per tutti i bucket
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/topology/v1/buckets' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request GET \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/topology/v1/buckets" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----

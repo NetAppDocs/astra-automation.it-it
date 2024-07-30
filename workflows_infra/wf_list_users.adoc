@@ -16,11 +16,8 @@ summary: È possibile elencare gli utenti definiti per un account Astra specific
 [role="lead"]
 È possibile elencare gli utenti definiti per un account Astra specifico.
 
-
-
-=== 1. Elencare gli utenti
-
-Eseguire la seguente chiamata API REST.
+.Metodo HTTP ed endpoint
+Questa chiamata API REST utilizza il metodo e l'endpoint seguenti.
 
 [cols="25,75"]
 |===
@@ -29,10 +26,7 @@ Eseguire la seguente chiamata API REST.
 
 | OTTIENI | /accounts/{account_id}/core/v1/users 
 |===
-
-
-===== Parametri di input aggiuntivi
-
+.Parametri di input aggiuntivi
 Oltre ai parametri comuni a tutte le chiamate API REST, negli esempi di curl vengono utilizzati anche i seguenti parametri.
 
 [cols="25,10,10,55"]
@@ -42,27 +36,26 @@ Oltre ai parametri comuni a tutte le chiamate API REST, negli esempi di curl ven
 
 | includi | Query | No | Se si desidera, selezionare i valori che si desidera restituire nella risposta. 
 |===
-
-
-===== Esempio di curl: Restituisce tutti i dati per tutti gli utenti
-
+.Esempio di curl: Restituisce tutti i dati per tutti gli utenti
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/core/v1/users' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request GET \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/core/v1/users" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----
-
-
-===== Esempio di curl: Restituisce il nome, il cognome e l'id per tutti gli utenti
-
+.Esempio di curl: Restituisce il nome, il cognome e l'id per tutti gli utenti
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/core/v1/users?include=firstName,lastName,id' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request GET \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/core/v1/users?include=firstName,lastName,id" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----
-
-
-===== Esempio di output JSON
-
-[source, curl]
+.Esempio di output JSON
+[listing]
 ----
 {
   "items": [

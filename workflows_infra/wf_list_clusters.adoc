@@ -18,15 +18,18 @@ summary: È possibile elencare i cluster disponibili in un cloud specifico.
 
 
 
-=== 1. Selezionare il cloud
+== Passaggio 1: Selezionare il fumetto
 
 Eseguire il flusso di lavoro link:../workflows_infra/wf_list_clouds.html["Elencare i cloud"] e seleziona il cloud che contiene i cluster.
 
 
 
-=== 2. Elencare i cluster
+== Fase 2: Elencare i cluster
 
 Eseguire la seguente chiamata API REST per elencare i cluster in un cloud specifico.
+
+.Metodo HTTP ed endpoint
+Questa chiamata API REST utilizza il metodo e l'endpoint seguenti.
 
 [cols="1,6"]
 |===
@@ -35,19 +38,17 @@ Eseguire la seguente chiamata API REST per elencare i cluster in un cloud specif
 
 | OTTIENI | /accounts/{account_id}/topology/v1/cloud/{cloud_id}/cluster 
 |===
-
-
-===== Esempio di curl: Restituisce tutti i dati per tutti i cluster
-
+.Esempio di curl: Restituisce tutti i dati per tutti i cluster
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/topology/v1/clouds/<CLOUD_ID>/clusters' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request GET \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/topology/v1/clouds/<CLOUD_ID>/clusters" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----
-
-
-===== Esempio di output JSON
-
-[source, json]
+.Esempio di output JSON
+[listing]
 ----
 {
     "items": [

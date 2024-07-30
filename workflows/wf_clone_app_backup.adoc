@@ -18,7 +18,7 @@ summary: È possibile creare una nuova applicazione clonandola da un backup.
 
 
 
-=== Prima di iniziare
+== Prima di iniziare
 
 Tenere presente quanto segue a proposito di questo flusso di lavoro:
 
@@ -31,21 +31,24 @@ NOTE: Per clonare un'applicazione in un cluster diverso, è necessario aggiornar
 
 
 
-=== 1. Selezionare l'applicazione da clonare
+== Passaggio 1: Selezionare l'applicazione da clonare
 
 Eseguire il flusso di lavoro link:wf_list_man_apps.html["Elencare le applicazioni"] e selezionare l'applicazione che si desidera clonare. Per la chiamata DI PAUSA utilizzata per clonare l'applicazione sono necessari diversi valori delle risorse.
 
 
 
-=== 2. Selezionare il backup da utilizzare
+== Passaggio 2: Selezionare il backup da utilizzare
 
 Eseguire il flusso di lavoro link:wf_list_backups.html["Elencare i backup"] e selezionare il backup che si desidera utilizzare.
 
 
 
-=== 3. Clonare l'applicazione
+== Passaggio 3: Clonare l'applicazione
 
 Eseguire la seguente chiamata API REST.
+
+.Metodo HTTP ed endpoint
+Questa chiamata API REST utilizza il metodo e l'endpoint seguenti.
 
 [cols="25,75"]
 |===
@@ -54,10 +57,7 @@ Eseguire la seguente chiamata API REST.
 
 | POST | /accounts/{account_id}/k8s/v2/qpps 
 |===
-
-
-===== Parametri di input aggiuntivi
-
+.Parametri di input aggiuntivi
 Oltre ai parametri comuni a tutte le chiamate API REST, negli esempi di curl vengono utilizzati anche i seguenti parametri.
 
 [cols="25,10,10,55"]
@@ -67,10 +67,18 @@ Oltre ai parametri comuni a tutte le chiamate API REST, negli esempi di curl ven
 
 | JSON | Corpo | Sì | Fornisce i parametri per l'applicazione clonata. Vedere l'esempio riportato di seguito. 
 |===
-
-
-===== Esempio di input JSON
-
+.Esempio di curl: Clonare un'applicazione da un backup
+[source, curl]
+----
+curl --request POST \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/k8s/v2/apps" \
+--include \
+--header "Content-Type: application/astra-app+json" \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data  @JSONinput
+----
+.Esempio di input JSON
 [source, json]
 ----
 {
@@ -82,12 +90,4 @@ Oltre ai parametri comuni a tutte le chiamate API REST, negli esempi di curl ven
   "namespace": "mysql",
   "backupID": "e24515bd-a28e-4b28-b832-f3c74dbf32fb"
 }
-----
-
-
-===== Esempio di curl: Clonare un'applicazione da un backup
-
-[source, curl]
-----
-curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v2/apps' --header 'Content-Type: application/astra-app+json' --header '*/*' --header 'Authorization: Bearer <API_TOKEN>' --data @JSONinput
 ----

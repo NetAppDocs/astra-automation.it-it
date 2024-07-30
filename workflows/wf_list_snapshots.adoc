@@ -18,15 +18,18 @@ summary: 'È possibile elencare le istantanee acquisite per un"applicazione spec
 
 
 
-=== Prima di iniziare
+== Prima di iniziare
 
 È necessario disporre dell'ID dell'applicazione per la quale si desidera elencare le snapshot. Se necessario, è possibile utilizzare il flusso di lavoro link:wf_list_man_apps.html["Elencare le applicazioni"] per individuare l'applicazione.
 
 
 
-=== 1. Elencare le istantanee
+== Elencare le istantanee
 
 Eseguire la seguente chiamata API REST per elencare le snapshot.
+
+.Metodo HTTP ed endpoint
+Questa chiamata API REST utilizza il metodo e l'endpoint seguenti.
 
 [cols="25,75"]
 |===
@@ -35,10 +38,7 @@ Eseguire la seguente chiamata API REST per elencare le snapshot.
 
 | OTTIENI | /Accounts/{account_id}/k8s/v1/apps/{app_id}/appSnap 
 |===
-
-
-===== Parametri di input aggiuntivi
-
+.Parametri di input aggiuntivi
 Oltre ai parametri comuni a tutte le chiamate API REST, negli esempi di curl vengono utilizzati anche i seguenti parametri.
 
 [cols="15,10,10,65"]
@@ -51,27 +51,26 @@ Oltre ai parametri comuni a tutte le chiamate API REST, negli esempi di curl ven
 
 | conta | Query | No | Se `count=true` il numero di snapshot è incluso nella sezione dei metadati della risposta. 
 |===
-
-
-===== Esempio di curl: Restituire tutte le snapshot per l'applicazione
-
+.Esempio di curl: Restituire tutte le snapshot per l'applicazione
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/apps/<APP_ID>/appSnaps' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request GET \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/k8s/v1/apps/$APP_ID/appSnaps" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----
-
-
-===== Esempio di curl: Restituisce tutte le snapshot per l'applicazione e il numero
-
+.Esempio di curl: Restituisce tutte le snapshot per l'applicazione e il numero
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/apps/<APP_ID>/appSnaps?count=true' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request GET \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/k8s/v1/apps/$APP_ID/appSnaps?count=true" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----
-
-
-===== Esempio di output JSON
-
-[source, json]
+.Esempio di output JSON
+[listing]
 ----
 {
     "items": [

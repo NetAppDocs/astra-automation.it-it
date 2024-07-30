@@ -18,7 +18,7 @@ summary: 'È possibile eliminare uno snapshot associato a un"applicazione.'
 
 
 
-=== Prima di iniziare
+== Prima di iniziare
 
 È necessario disporre di quanto segue:
 
@@ -28,9 +28,12 @@ summary: 'È possibile eliminare uno snapshot associato a un"applicazione.'
 
 
 
-=== 1. Eliminare l'istantanea
+== Eliminare l'istantanea
 
 Eseguire la seguente chiamata API REST.
+
+.Metodo HTTP ed endpoint
+Questa chiamata API REST utilizza il metodo e l'endpoint seguenti.
 
 [cols="25,75"]
 |===
@@ -39,10 +42,7 @@ Eseguire la seguente chiamata API REST.
 
 | ELIMINARE | /Accounts/{account_id}/k8s/v1/apps/{app_id}/appSnap/{appSnap_id} 
 |===
-
-
-===== Parametri di input aggiuntivi
-
+.Parametri di input aggiuntivi
 Oltre ai parametri comuni a tutte le chiamate API REST, negli esempi di curl vengono utilizzati anche i seguenti parametri.
 
 [cols="25,10,10,55"]
@@ -55,11 +55,12 @@ Oltre ai parametri comuni a tutte le chiamate API REST, negli esempi di curl ven
 
 | id snapshot | Percorso | Sì | Identifica lo snapshot da eliminare. 
 |===
-
-
-===== Esempio di curl: Eliminare una singola istantanea per l'applicazione
-
+.Esempio di curl: Eliminare una singola istantanea per l'applicazione
 [source, curl]
 ----
-curl --location -i --request DELETE 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/apps/<APP_ID>/appSnaps/<SNAPSHOT_ID>' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request DELETE \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/k8s/v1/apps/$APP_ID/appSnaps/<SNAPSHOT_ID>" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----

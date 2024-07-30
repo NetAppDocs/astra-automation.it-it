@@ -21,21 +21,25 @@ NOTE: L'aggiunta di un cluster non è necessaria quando si utilizza un servizio 
 
 
 
-=== 1. Ottenere il file kubeconfig
+== Passo 1: Ottenere il file kubeconfig
 
 È necessario ottenere una copia del file *kubconfig* dall'amministratore o dal servizio Kubernetes.
 
 
 
-=== Preparare il file kubeconfig
+== Fase 2: Preparare il file kubeconfig
 
 Prima di utilizzare il file *kubeconfig*, eseguire le seguenti operazioni:
 
-.Convertire il file dal formato YAML a JSON
+. Converti file da formato YAML a JSON:
++
 Se si riceve il file kubeconfig formattato come YAML, è necessario convertirlo in JSON.
 
-.Codificare JSON in base64
+. Codifica JSON in base64:
++
 È necessario codificare il file JSON in base64.
+
+
 
 .Esempio
 Di seguito viene riportato un esempio di conversione del file kubeconfig da YAML a JSON e di codifica in base64:
@@ -44,7 +48,7 @@ Di seguito viene riportato un esempio di conversione del file kubeconfig da YAML
 
 
 
-=== 3. Selezionare il cloud
+== Passaggio 3: Selezionare il fumetto
 
 Eseguire il flusso di lavoro link:../workflows_infra/wf_list_clouds.html["Elencare i cloud"] e selezionare il cloud in cui verrà aggiunto il cluster.
 
@@ -53,9 +57,12 @@ NOTE: L'unico cloud che puoi selezionare è il cloud *privato*.
 
 
 
-=== 4. Creare una credenziale
+== Passaggio 4: Creare una credenziale
 
 Eseguire la seguente chiamata API REST per creare una credenziale utilizzando il file kubeconfig.
+
+.Metodo HTTP ed endpoint
+Questa chiamata API REST utilizza il metodo e l'endpoint seguenti.
 
 [cols="25,75"]
 |===
@@ -64,11 +71,18 @@ Eseguire la seguente chiamata API REST per creare una credenziale utilizzando il
 
 | POST | /accounts/{account_id}/core/v1/credentials 
 |===
-
-
-===== Esempio di input JSON
-
+.Esempio di arricciamento
 [source, curl]
+----
+curl --request POST \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/core/v1/credentials" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data  @JSONinput
+----
+.Esempio di input JSON
+[source, json]
 ----
 {
   "type" :  "application/astra-credential",
@@ -83,17 +97,12 @@ Eseguire la seguente chiamata API REST per creare una credenziale utilizzando il
 ----
 
 
-===== Esempio di arricciamento
-
-[source, curl]
-----
-curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/core/v1/credentials' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>' --data @JSONinput
-----
-
-
-=== 5. Aggiungere il cluster
+== Passaggio 5: Aggiungere il cluster
 
 Eseguire la seguente chiamata API REST per aggiungere il cluster al cloud. Il valore di `credentialID` Il campo di immissione viene ottenuto dalla chiamata API REST nel passaggio precedente.
+
+.Metodo HTTP ed endpoint
+Questa chiamata API REST utilizza il metodo e l'endpoint seguenti.
 
 [cols="25,75"]
 |===
@@ -102,23 +111,22 @@ Eseguire la seguente chiamata API REST per aggiungere il cluster al cloud. Il va
 
 | POST | /accounts/{account_id}/topology/v1/cloud/{cloud_id}/cluster 
 |===
-
-
-===== Esempio di input JSON
-
+.Esempio di arricciamento
 [source, curl]
+----
+curl --request POST \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/topology/v1/clouds/<CLOUD_ID>/clusters" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data  @JSONinput
+----
+.Esempio di input JSON
+[source, json]
 ----
 {
   "type" :  "application/astra-cluster",
   "version" : "1.1",
   "credentialID": credential_id
 }
-----
-
-
-===== Esempio di arricciamento
-
-[source, curl]
-----
-curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/topology/v1/clouds/<CLOUD_ID>/clusters' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>' --data @JSONinput
 ----

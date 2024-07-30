@@ -17,14 +17,19 @@ summary: 'È possibile eseguire un semplice comando curl sulla CLI della worksta
 È possibile eseguire un semplice comando curl sulla CLI della workstation per iniziare a utilizzare l'API REST di Astra Control e verificarne la disponibilità.
 
 .Prima di iniziare
-L'utility Curl deve essere disponibile sulla workstation locale. È inoltre necessario disporre di un token API e dell'identificativo account associato. Vedere link:get_api_token.html["Ottieni un token API"] per ulteriori informazioni.
+L'utilità Curl deve essere disponibile sulla workstation locale. È inoltre necessario disporre di un token API e dell'identificativo account associato. Per ulteriori informazioni, vedere link:get_api_token.html["Ottieni un token API"] .
 
 .Esempio di arricciamento
-Il seguente comando Curl recupera un elenco di utenti Astra. Fornire il <ACCOUNT_ID> e il <API_TOKEN> appropriati, come indicato.
+Il seguente comando curl recupera un elenco di utenti Astra. Fornire gli $ACCOUNT_ID e $API_TOKEN appropriati come indicato.
 
 [source, curl]
 ----
-curl --location --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/core/v1/users' --header 'Content-Type: application/json' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request GET  \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/core/v1/users" \
+--include \
+--header "Content-Type: application/json" \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----
 .Esempio di output JSON
 [listing]

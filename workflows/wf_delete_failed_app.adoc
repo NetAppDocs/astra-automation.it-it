@@ -18,36 +18,36 @@ Potrebbe non essere possibile rimuovere un'applicazione gestita in caso di backu
 
 
 
-=== 1. Selezionare l'applicazione da eliminare
+== Passaggio 1: Selezionare l'applicazione da eliminare
 
 Eseguire il flusso di lavoro link:wf_list_man_apps.html["Elencare le applicazioni"] e selezionare l'applicazione che si desidera rimuovere.
 
 
 
-=== 2. Elencare i backup esistenti per l'applicazione
+== Passaggio 2: Elencare i backup esistenti per l'applicazione
 
 Eseguire il flusso di lavoro link:wf_list_backups.html["Elencare i backup"].
 
 
 
-=== 3. Eliminare tutti i backup
+== Fase 3: Eliminare tutti i backup
 
 Eliminare tutti i backup delle applicazioni eseguendo il workflow link:wf_delete_backup.html["Eliminare un backup"] per ogni backup nell'elenco.
 
 
 
-=== 4. Elencare le snapshot esistenti per l'applicazione
+== Passaggio 4: Elencare le istantanee esistenti per l'applicazione
 
 Eseguire il flusso di lavoro link:wf_list_snapshots.html["Elencare le istantanee"].
 
 
 
-=== 5. Eliminare tutte le istantanee
+== Passaggio 5: Eliminare tutte le istantanee
 
 Eseguire il flusso di lavoro link:wf_delete_snapshot.html["Eliminare uno snapshot"] da ogni snapshot nell'elenco.
 
 
 
-=== 6. Rimuovere l'applicazione
+== Fase 6: Rimuovere l'applicazione
 
 Eseguire il flusso di lavoro link:wf_unmanage_app.html["Annullare la gestione di un'applicazione"] per rimuovere l'applicazione.

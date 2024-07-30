@@ -16,11 +16,10 @@ summary: Puoi elencare i cloud definiti e disponibili per un account Astra speci
 [role="lead"]
 Puoi elencare i cloud definiti e disponibili per un account Astra specifico.
 
-
-
-=== 1. Elencare i cloud
-
 Eseguire la seguente chiamata API REST per elencare i cloud.
+
+.Metodo HTTP ed endpoint
+Questa chiamata API REST utilizza il metodo e l'endpoint seguenti.
 
 [cols="25,75"]
 |===
@@ -29,11 +28,12 @@ Eseguire la seguente chiamata API REST per elencare i cloud.
 
 | OTTIENI | /accounts/{account_id}/topology/v1/cloud 
 |===
-
-
-===== Esempio di curl: Restituisce tutti i dati per tutti i cloud
-
+.Esempio di curl: Restituisce tutti i dati per tutti i cloud
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/topology/v1/clouds' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request GET \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/topology/v1/clouds" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----

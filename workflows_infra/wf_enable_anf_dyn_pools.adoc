@@ -21,12 +21,15 @@ NOTE: Dynamic ANF Pools è una funzionalità delle applicazioni gestite da Astra
 
 
 
-=== 1. Aggiungere l'identificativo dell'abbonamento Azure
+== Passaggio 1: Aggiungere l'identificatore di sottoscrizione di Azure
 
 Eseguire la seguente chiamata API REST.
 
 
 NOTE: È necessario aggiornare l'esempio di input JSON in base all'ambiente in uso, inclusi l'ID di abbonamento e il valore base64 per l'entità del servizio.
+
+.Metodo HTTP ed endpoint
+Questa chiamata API REST utilizza il metodo e l'endpoint seguenti.
 
 [cols="1,6"]
 |===
@@ -35,6 +38,17 @@ NOTE: È necessario aggiornare l'esempio di input JSON in base all'ambiente in u
 
 | POST | /accounts/{account_id}/core/v1/credentials 
 |===
+.Esempio di arricciamento
+[source, curl]
+----
+curl --request POST \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/core/v1/credentials" \
+--include \
+--header "Content-Type: application/astra-credential+json"
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data  @JSONinput
+----
 .Esempio di input JSON
 [source, json]
 ----
@@ -65,25 +79,20 @@ NOTE: È necessario aggiornare l'esempio di input JSON in base all'ambiente in u
   }
 }
 ----
-.Esempio di arricciamento
-[source, curl]
-----
-curl --location -i --request POST --data @JSONinput 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/core/v1/credentials' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>' --header 'Content-Type: application/astra-credential+json'
-----
 
 
-=== 2. Aggiungere un bucket, se necessario
+== Fase 2: Aggiungere una benna se necessario
 
 Se necessario, aggiungere un bucket all'applicazione gestita.
 
 
 
-=== 3. Eseguire un backup dell'applicazione gestita
+== Passaggio 3: Eseguire un backup dell'applicazione gestita
 
 Eseguire il flusso di lavoro link:../workflows/wf_create_backup.html["Creare un backup per un'applicazione"]. Il pool di capacità in cui è presente il volume persistente originale si espanderà e si ridurrà automaticamente.
 
 
 
-=== 4. Esaminare il registro eventi
+== Fase 4: Esaminare il registro eventi
 
 Gli eventi di attività vengono registrati durante il backup. Eseguire il flusso di lavoro link:../workflows/wf_list_notifications.html["Elencare le notifiche"] per visualizzare i messaggi.

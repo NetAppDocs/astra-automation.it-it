@@ -16,11 +16,10 @@ summary: È possibile elencare i backend di storage disponibili.
 [role="lead"]
 È possibile elencare i backend di storage disponibili.
 
-
-
-=== 1. Elencare i backend
-
 Eseguire la seguente chiamata API REST.
+
+.Metodo HTTP ed endpoint
+Questa chiamata API REST utilizza il metodo e l'endpoint seguenti.
 
 [cols="1,6"]
 |===
@@ -29,19 +28,17 @@ Eseguire la seguente chiamata API REST.
 
 | OTTIENI | /Accounts/{account_id}/topology/v1/storageBackends 
 |===
-
-
-===== Esempio di curl: Restituisce tutti i dati per tutti i backend di storage
-
+.Esempio di curl: Restituisce tutti i dati per tutti i backend di storage
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/topology/v1/storageBackends' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request GET \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/topology/v1/storageBackends" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----
-
-
-===== Esempio di output JSON
-
-[source, json]
+.Esempio di output JSON
+[listing]
 ----
 {
   "items": [

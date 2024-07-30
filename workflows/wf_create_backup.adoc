@@ -18,15 +18,18 @@ summary: 'È possibile creare un backup per un"applicazione specifica e utilizza
 
 
 
-=== Prima di iniziare
+== Prima di iniziare
 
 Devi disporre dell'ID dell'applicazione di cui desideri eseguire il backup. Se necessario, è possibile utilizzare il flusso di lavoro link:wf_list_man_apps.html["Elencare le applicazioni"] per individuare l'applicazione.
 
 
 
-=== 1. Creare un backup
+== Creare un backup
 
 Eseguire la seguente chiamata API REST.
+
+.Metodo HTTP ed endpoint
+Questa chiamata API REST utilizza il metodo e l'endpoint seguenti.
 
 [cols="25,75"]
 |===
@@ -35,10 +38,7 @@ Eseguire la seguente chiamata API REST.
 
 | POST | /Accounts/{account_id}/k8s/v1/apps/{app_id}/appBackups 
 |===
-
-
-===== Parametri di input aggiuntivi
-
+.Parametri di input aggiuntivi
 Oltre ai parametri comuni a tutte le chiamate API REST, negli esempi di curl vengono utilizzati anche i seguenti parametri.
 
 [cols="25,10,10,55"]
@@ -51,10 +51,18 @@ Oltre ai parametri comuni a tutte le chiamate API REST, negli esempi di curl ven
 
 | JSON | Corpo | Sì | Fornisce i parametri per il backup. Vedere l'esempio riportato di seguito. 
 |===
-
-
-===== Esempio di input JSON
-
+.Esempio di curl: Creare un backup per l'applicazione
+[source, curl]
+----
+curl --request POST \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/k8s/v1/apps/$APP_ID/appBackups" \
+--include \
+--header "Content-Type: application/astra-appBackup+json" \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data  @JSONinput
+----
+.Esempio di input JSON
 [source, json]
 ----
 {
@@ -62,12 +70,4 @@ Oltre ai parametri comuni a tutte le chiamate API REST, negli esempi di curl ven
   "version": "1.1",
   "name": "backup-david-1"
 }
-----
-
-
-===== Esempio di curl: Creare un backup per l'applicazione
-
-[source, curl]
-----
-curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/apps/<APP_ID>/appBackups' --header 'Content-Type: application/astra-appBackup+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>' --data @JSONinput
 ----
